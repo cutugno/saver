@@ -4,11 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
 	<section class="hgroup">
           <div class="container">
-               <h1>Blog</h1>
+               <h1><?php echo $title; ?></h1>
                <h2>Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.</h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li class="active">Blog</li>
+                    <li><a href="<?php echo site_url('blog'); ?>">Blog</a> </li>
+                    <li class="active"><?php echo $title; ?></li>
                </ul>
           </div>     
      </section>
