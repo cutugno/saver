@@ -6,7 +6,7 @@ class Azienda extends CI_Controller {
 	public function index() {
 		
 		// menu active
-		$data['newsactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['blogactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
 		$data['aziendaactive']=" class='active'";
 		
 		// slider

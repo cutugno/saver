@@ -1,3 +1,15 @@
 .flex-control-nav {
 	display:none;
 }
+
+.team_member {
+   background: url(../images/wild_oliva_dark.png);  
+}
+
+.full_page_photo #map-rete {
+  height: 600px;
+}
+
+.scheda-affiliato {
+	min-height:400px;
+}

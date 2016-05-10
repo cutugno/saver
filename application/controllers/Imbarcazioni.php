@@ -9,8 +9,8 @@ class Imbarcazioni extends CI_Controller {
 		if (empty($tipo)) redirect(base_url());
 		
 		// menu active
-		$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
-		$data['newsactive']=" class='active'";
+		$data['blogactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['imbarcazioniactive']=" class='active'";
 		
 		// dati tipo imbarcazioni
 		switch ($tipo) {

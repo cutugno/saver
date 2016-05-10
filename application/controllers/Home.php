@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	public function index() {
 		
 		// menu active
-		$data['newsactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['blogactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
 		
 		// slider
 		$data['sliderloop']="

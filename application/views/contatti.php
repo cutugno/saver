@@ -7,8 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <h1>Contact us</h1>
                <h2>This is a subtitle used optionally for explaining more...</h2>
                <ul class="breadcrumb pull-right">
-                    <li><a href="index.html">Home</a> </li>
-                    <li class="active">Contact</li>
+                    <li><a href="<?php echo base_url(); ?>">Home</a> </li>
+                    <li class="active">Contatti</li>
                </ul>
            </div>
       </section>

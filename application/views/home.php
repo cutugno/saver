@@ -2,11 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<section class="call_to_action">
+	
+	<section class="call_to_action">
           <div class="container">
                <h3>focus on what’s important</h3>
-               <h4>and  make the web a little bit  prettier</h4>
-               <a class="btn btn-primary btn-lg" href="#">Buy this theme!</a>
+               <h4>Non paghi la tassa di possesso!</h4>
+               <a class="btn btn-primary btn-lg" href="#">Scopri di più</a>
           </div>     
      </section>
      <section class="features_teasers_wrapper">
