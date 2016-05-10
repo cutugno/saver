@@ -31,20 +31,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="container">
                <div class="row isotope_portfolio_container">
                     <div class="cat_travel col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                         <div class="portfolio_item"> <a href="portfolio_item.html" data-path-hover="M 180,190 0,158 0,0 180,0 z">
-                              <figure style="background-image:url(<?php echo base_url('images/portfolio/t5.jpg'); ?>)">
-                                   <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-                                        <path d="M 180,0 0,0 0,0 180,0 z"/>
-                                   </svg>
-                                   <figcaption>
-                                        <p>Description of the project dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum....</p>
-                                        <div class="view_button">View</div>
-                                   </figcaption>
-                              </figure>
+                         <div class="portfolio_item"> 
+							  <a href="<?php echo site_url('imbarcazioni/linea-open/modello/1'); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+								  <figure style="background-image:url(<?php echo base_url('images/portfolio/t5.jpg'); ?>)">
+									   <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+											<path d="M 180,0 0,0 0,0 180,0 z"/>
+									   </svg>
+									   <figcaption>
+											<p>Description of the project dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum....</p>
+											<div class="view_button">View</div>
+									   </figcaption>
+								  </figure>
                               </a>
                               <div class="portfolio_description">
-                                   <h3><a href="portfolio_item.html">Lorem Ipsum</a></h3>
-                                   <p>travel</p>
+                                   <h3>Lorem Ipsum</h3>
+
                               </div>
                          </div>
                     </div>

@@ -17,3 +17,36 @@
 .attachment {
 	margin-top: 30px;
 }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+ }
+
+.navbar .nav li.active ul.dropdown-menu li a {
+	border-bottom: none;
+}
+
+.navbar .nav li.active ul.dropdown-menu li a:hover {
+	border-bottom: solid 1px #428bca;
+}
+
+.flags {
+	float: left;	
+}
+
+.flags:not(:last-child) {
+	margin-right: 5px;
+}
+
+#ita_flag {
+	background: url('../images/sprite-flags.png') no-repeat -7px -9px;
+	width: 23px;
+	height: 20px;
+}
+
+#eng_flag {
+	background: url('../images/sprite-flags.png') no-repeat -7px -33px;
+	width: 23px;
+	height: 20px;
+}

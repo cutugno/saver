@@ -24,7 +24,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </ul>
                </div>
           </div>
-          <div id="social_media_wrapper"> <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a> <a href="https://twitter.com/leonartgr"><i class="fa fa-twitter"></i></a> <a href="#googleplus"><i class="fa fa-google-plus"></i></a> </div>
-          <!-- <div id="sign"><a href="register.html"><i class="fa fa-user"></i><span>Register/Sign in</span></a></div> -->
+          <div id="social_media_wrapper"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-envelope"></i></a> </div>
+          <div id="sign">
+			<div class="flags" id="ita_flag"></div>
+			<div class="flags" id="eng_flag"></div>
+          </div>
      </div>
 </header>

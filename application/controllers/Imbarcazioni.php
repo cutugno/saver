@@ -5,12 +5,11 @@ class Imbarcazioni extends CI_Controller {
 
 	public function index($tipo) {
 		
-
 		if (empty($tipo)) redirect(base_url());
 		
 		// menu active
 		$data['blogactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
-		$data['imbarcazioniactive']=" class='active'";
+		$data['imbarcazioniactive']=" active";
 		
 		// dati tipo imbarcazioni
 		switch ($tipo) {
@@ -42,6 +41,14 @@ class Imbarcazioni extends CI_Controller {
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('common/close');
+		
+	}
+	
+	public function single($id) {
+		
+		if (empty($id)) redirect('imbarcazioni');
+		
+		echo $id;
 		
 	}
 	

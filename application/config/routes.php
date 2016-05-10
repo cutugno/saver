@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['blog/(:any)/(:num)'] = 'blog/single/$2';
 $route['blog/(:any)'] = 'blog/category/$1';
 $route['rete-vendita'] = 'rete';
+$route['imbarcazioni/(:any)/(:any)/(:num)'] = 'imbarcazioni/single/$3';
 $route['imbarcazioni/(:any)'] = 'imbarcazioni/index/$1';
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
