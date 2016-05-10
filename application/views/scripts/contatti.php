@@ -1,4 +1,4 @@
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9dpgKXojmHke4mK4UHXLaqE6n898nHwo&sensor=false"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWkGllTMlUJIIOa54QPYFozJs8CT5LcrM&language=it&sensor=false"></script>
 <script type="text/javascript">
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
