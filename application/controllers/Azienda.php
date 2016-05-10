@@ -1,16 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Azienda extends CI_Controller {
 
 	public function index() {
 		
 		// menu active
-		$data['newsactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['newsactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['aziendaactive']=" class='active'";
 		
 		// slider
 		$data['sliderloop']="
-			   <li class=\"item\" style=\"background-image: url(images/slider-1.jpg)\">
+			   <li class=\"item\" style=\"background-image: url(images/slider-4.jpg)\">
                     <div class=\"container\">
                          <div class=\"carousel-caption\">
                               <h1>a <strong>flexible</strong> theme<br>
@@ -19,7 +20,7 @@ class Home extends CI_Controller {
                               <span class=\"round_badge\"><strong><i class=\"fa fa-twitter\"></i></strong><strong>V3</strong></span> </div>
                     </div>
                </li>
-               <li class=\"item\" style=\"background-image: url(images/slider-2.jpg)\">
+               <li class=\"item\" style=\"background-image: url(images/slider-5.jpg)\">
                     <div class=\"container\">
                          <div class=\"carousel-caption\">
                               <h1>makes <strong>real use</strong><br>
@@ -28,7 +29,7 @@ class Home extends CI_Controller {
                          </div>
                     </div>
                </li>
-               <li class=\"item\" style=\"background-image: url(images/slider-3.jpg)\">
+               <li class=\"item\" style=\"background-image: url(images/slider-6.jpg)\">
                     <div class=\"container\">
                          <div class=\"carousel-caption\">
                               <h1 class=\"skincolored\"><strong>subtle</strong> animations<br>
@@ -42,9 +43,9 @@ class Home extends CI_Controller {
 		
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
-		$this->load->view('common/body-slider',$data);
+		$this->load->view('common/body-slider');
 		$this->load->view('common/body-main-start');
-		$this->load->view('home');
+		$this->load->view('azienda');
 		$this->load->view('common/body-footer');
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
