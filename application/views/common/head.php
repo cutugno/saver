@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href="<?php echo base_url('css/flexslider.css');?>" rel="stylesheet" type="text/css" media="screen">
 <link href="<?php echo base_url('css/prettyPhoto.css');?>" rel="stylesheet" type="text/css" media="screen">
 <link href="<?php echo base_url('css/owl.carousel.css');?>" rel="stylesheet" type="text/css" media="screen">
+<link href="<?php echo base_url('css/jquery-eu-cookie-law-popup.css');?>" rel="stylesheet" type="text/css" media="screen">
 <link href="<?php echo base_url('css/style.css');?>" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url('css/custom.css');?>" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url('fonts/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
@@ -25,4 +26,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link rel="apple-touch-icon-precomposed" href="<?php echo base_url('images/apple-touch-icon-57x57-precomposed.png'); ?>">
 <link rel="shortcut icon" href="<?php echo base_url('favicon.ico'); ?>">
 </head>
-<body class="collapsing_header">
+<body class="collapsing_header eupopup">

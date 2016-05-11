@@ -49,6 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['cookie'] = 'home/cookie';
 $route['blog/(:any)/(:num)'] = 'blog/single/$2';
 $route['blog/(:any)'] = 'blog/category/$1';
 $route['rete-vendita'] = 'rete';
