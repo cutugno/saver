@@ -48,7 +48,22 @@ class Imbarcazioni extends CI_Controller {
 		
 		if (empty($id)) redirect('imbarcazioni');
 		
-		echo $id;
+		// menu active
+		$data['blogactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['imbarcazioniactive']=" active";
+		
+		// dati imbarcazione
+		$data['title']="Modello qualsiasi";
+		
+		$this->load->view('common/head');
+		$this->load->view('common/body-header',$data);
+		$this->load->view('common/body-main-start');
+		$this->load->view('imbarcazioni-single',$data);
+		$this->load->view('common/body-footer');
+		$this->load->view('common/body-main-close');
+		$this->load->view('common/scripts');
+		$this->load->view('scripts/imbarcazioni-single');
+		$this->load->view('common/close');
 		
 	}
 	

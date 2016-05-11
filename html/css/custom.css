@@ -50,3 +50,23 @@
 	width: 23px;
 	height: 20px;
 }
+
+.owl-carousel .item-video{
+	opacity:1				
+}
+
+#carousel2 {
+	margin: 10px 0;
+}
+
+p.bg-primary {
+	padding-left:3px;
+}
+
+.imbarcazione {
+	margin-top: 35px;
+}
+
+.areasensitive {
+	margin-top: 20px;
+}

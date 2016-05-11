@@ -13,6 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href="<?php echo base_url('css/animate.css');?>" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url('css/flexslider.css');?>" rel="stylesheet" type="text/css" media="screen">
 <link href="<?php echo base_url('css/prettyPhoto.css');?>" rel="stylesheet" type="text/css" media="screen">
+<link href="<?php echo base_url('css/owl.carousel.css');?>" rel="stylesheet" type="text/css" media="screen">
 <link href="<?php echo base_url('css/style.css');?>" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url('css/custom.css');?>" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url('fonts/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet" type="text/css">
