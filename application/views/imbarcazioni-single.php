@@ -54,7 +54,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <br>
                               <br>
                               <div>
-								  <h2 class="section_header">Caratteristiche tecniche</h2>
+								  <h2 class="section_header">Caratteristiche tecniche 
+									<small>
+										<select class="pull-right">
+											<option value=1>Italiano</option>
+											<option value=2>English</option>
+											<option value=3>Francais</option>
+											<option value=4>Espanol</option>
+										</select>
+									</small>
+								  </h2>
                                   <p><strong>Date:</strong> November 2013</p>
 								  <p><strong>Client:</strong> Plethora Inc.</p>
 								  <p><strong>Category:</strong> Design</p>
