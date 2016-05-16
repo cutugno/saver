@@ -2,13 +2,13 @@
 $(document).ready(function() {
     $('#submit_btn').click(function(){ 
         //get input field values
-        var user_name       = $('#name').val(); 
+        var user_name       = $('#nome').val(); 
         var user_email      = $('#email').val();
-        var user_subject    = $('#subject').val();
-        var user_message    = $('#message').val();
+        var user_subject    = $('#oggetto').val();
+        var user_message    = $('#messaggio').val();
         
         var notice     = $("#notice");
-        var $req_fields    = "Please fill in all the fields.";
+        var $req_fields    = "Tutti i campi sono obbligatori.";
 
         //simple validation at client's end
         var proceed = true;
@@ -23,7 +23,7 @@ $(document).ready(function() {
           }
         
         if(user_name==""){ 
-            $('#name').css('border-color','red'); 
+            $('#nome').css('border-color','red'); 
             proceed = false;
         }
         if(user_email==""){ 
@@ -31,11 +31,11 @@ $(document).ready(function() {
             proceed = false;
         }
         if(user_subject=="") {    
-            $('#subject').css('border-color','red'); 
+            $('#oggetto').css('border-color','red'); 
             proceed = false;
         }
         if(user_message=="") {  
-            $('#message').css('border-color','red'); 
+            $('#messaggio').css('border-color','red'); 
             proceed = false;
         }
 

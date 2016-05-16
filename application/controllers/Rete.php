@@ -10,7 +10,7 @@ class Rete extends CI_Controller {
 		$data['reteactive']=" class='active'";
 		
 		// mappa
-		$data['mapid']="map-rete";
+		$data['mapcontclass']="map-rete";
 		
 		// elenco affiliati
 				

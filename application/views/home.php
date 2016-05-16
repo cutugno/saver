@@ -30,59 +30,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      </section>
      <section class="portfolio_teasers_wrapper">
           <div class="container">
-               <h2 class="section_header fancy centered">Recent Work or Projects from Portfolio<small>we take pride in our work</small></h2>
+               <h2 class="section_header fancy centered">Alcuni dei nostri prodotti</h2>
                <div class="portfolio_strict row">
                     <div class="col-sm-4 col-md-4">
-                         <div class="portfolio_item wow animated flipInX"> <a href="portfolio_item.html" data-path-hover="M 180,190 0,158 0,0 180,0 z">
-                              <figure style="background-image:url(images/product-1.jpg)">
+                         <div class="portfolio_item wow animated flipInX"> 
+							  <a href="<?php echo site_url('imbarcazioni/linea-open/modello/1'); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+                              <figure style="background-image:url(<?php echo base_url('images/product-1.jpg'); ?>)">
                                    <svg viewBox="0 0 180 320" preserveAspectRatio="none">
                                         <path d="M 180,0 0,0 0,0 180,0 z"/>
                                    </svg>
                                    <figcaption>
-                                        <p>Description of the project dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum....</p>
-                                        <div class="view_button">View</div>
+                                        <p>Descrizione del modello con parole chiave</p>
+                                        <div class="view_button">Vedi</div>
                                    </figcaption>
                               </figure>
                               </a>
                               <div class="portfolio_description">
-                                   <h3><a href="portfolio_item.html">The {re}start Project</a></h3>
-                                   <p>Design</p>
+                                   <h3><a href="portfolio_item.html">Modello 1</a></h3>
                               </div>
                          </div>
                     </div>
                     <div class="col-sm-4 col-md-4">
-                         <div class="portfolio_item wow animated flipInX"> <a href="portfolio_item.html" data-path-hover="M 180,190 0,158 0,0 180,0 z">
-                              <figure style="background-image:url(images/product-2.jpg)">
+                         <div class="portfolio_item wow animated flipInX"> 
+							  <a href="<?php echo site_url('imbarcazioni/linea-open/modello/1'); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+                              <figure style="background-image:url(<?php echo base_url('images/product-2.jpg'); ?>)">
                                    <svg viewBox="0 0 180 320" preserveAspectRatio="none">
                                         <path d="M 180,0 0,0 0,0 180,0 z"/>
                                    </svg>
                                    <figcaption>
-                                        <p>Description of the project dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum....</p>
-                                        <div class="view_button">View</div>
+                                        <p>Descrizione del modello con parole chiave</p>
+                                        <div class="view_button">Vedi</div>
                                    </figcaption>
                               </figure>
                               </a>
                               <div class="portfolio_description">
-                                   <h3><a href="portfolio_item.html">Colorfull iOS Apps</a></h3>
-                                   <p>Development</p>
+                                   <h3><a href="portfolio_item.html">Modello 2</a></h3>
                               </div>
                          </div>
                     </div>
                     <div class="col-sm-4 col-md-4">
-                         <div class="portfolio_item wow animated flipInX"> <a href="portfolio_item.html" data-path-hover="M 180,190 0,158 0,0 180,0 z">
-                              <figure style="background-image:url(images/product-3.jpg)">
+                         <div class="portfolio_item wow animated flipInX"> 
+							  <a href="<?php echo site_url('imbarcazioni/linea-open/modello/1'); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+                              <figure style="background-image:url(<?php echo base_url('images/product-3.jpg'); ?>)">
                                    <svg viewBox="0 0 180 320" preserveAspectRatio="none">
                                         <path d="M 180,0 0,0 0,0 180,0 z"/>
                                    </svg>
                                    <figcaption>
-                                        <p>Description of the project dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum....</p>
-                                        <div class="view_button">View</div>
+                                        <p>Descrizione del modello con parole chiave</p>
+                                        <div class="view_button">Vedi</div>
                                    </figcaption>
                               </figure>
                               </a>
                               <div class="portfolio_description">
-                                   <h3><a href="portfolio_item.html">POETIC Magazine</a></h3>
-                                   <p>Illustrations</p>
+                                   <h3><a href="portfolio_item.html">Modello 3</a></h3>
                               </div>
                          </div>
                     </div>
@@ -91,7 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      </section>
      <section class="clients_section wow animated fadeInUp">
           <div class="container">
-               <h2 class="section_header elegant centered">Our clients<small>all of them are satisfied</small></h2>
+               <h2 class="section_header elegant centered">I nostri partner<small>Professionisti che collaborano con noi</small></h2>
                <div class="clients_list"> 
 				   <a href="#"><img src="<?php echo base_url('images/partner-1.jpg'); ?>" alt="client"></a> 
 				   <a href="#"><img src="<?php echo base_url('images/partner-2.jpg'); ?>" alt="client"></a> 

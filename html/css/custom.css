@@ -3,11 +3,16 @@
 }
 
 .team_member {
-   background: url(../images/wild_oliva_dark.png);  
+   background: url(../images/wild_oliva_light_head.png);  
+   color: #333;
 }
 
-.full_page_photo #map-rete {
-  height: 600px;
+.map-contatti, .map-contatti > div#map{
+	height: 400px;
+}
+
+.map-rete, .map-rete > div#map {
+	height: 500px;
 }
 
 .scheda-affiliato {
@@ -69,4 +74,12 @@ p.bg-primary {
 
 .areasensitive {
 	margin-top: 20px;
+}
+
+.portfolio_description h3 {
+	color: #428bca;
+}
+
+#car_lingua {
+	width: auto;
 }

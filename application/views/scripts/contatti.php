@@ -31,49 +31,65 @@ function init() {
 }
 
 // form contatti
+
+function testExp (campo,expr) {
+	return expr.test(campo);
+}
+
 $(document).ready(function() {
     $('#submit_btn').click(function(){ 
         //get input field values
-        var user_name       = $('#name').val(); 
+        var user_name       = $('#nome').val(); 
         var user_email      = $('#email').val();
-        var user_subject    = $('#subject').val();
-        var user_message    = $('#message').val();
+        var user_subject    = $('#oggetto').val();
+        var user_message    = $('#messaggio').val();
         
         var notice     = $("#notice");
-        var $req_fields    = "Please fill in all the fields.";
+        var $req_fields    = "Tutti i campi sono obbligatori.";
 
         //simple validation at client's end
         var proceed = true;
+        var regexp = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
         
         if ( notice.is(":visible") ) notice.hide();
 
-        if ( "" == user_name || "" == user_email || "" == user_subject || "" == user_message ){
+        if ( "" == user_name || "" == user_email || "" == user_subject || "" == user_message || false == testExp(user_email,regexp) ){
 
-               notice.removeClass().html($req_fields).addClass("alert alert-warning alert-dismissable").fadeIn(400);
+               notice.removeClass().html($req_fields).addClass("alert alert-warning").fadeIn(400);
                proceed = false;
 
-          }
+         }
         
         if(user_name==""){ 
-            $('#name').css('border-color','red'); 
+            $('#nome').css('border-color','red'); 
             proceed = false;
         }
         if(user_email==""){ 
             $('#email').css('border-color','red'); 
             proceed = false;
         }
+        // controllo email valida
+		
+		if (!testExp(user_email,regexp)) {
+			$("#email").val("");
+			$('#email').css('border-color','red');
+			notice.append(" Formato email non valido."); 
+			proceed = false;
+		}
+        
         if(user_subject=="") {    
-            $('#subject').css('border-color','red'); 
+            $('#oggetto').css('border-color','red'); 
             proceed = false;
         }
         if(user_message=="") {  
-            $('#message').css('border-color','red'); 
+            $('#messaggio').css('border-color','red'); 
             proceed = false;
         }
 
         //everything looks good! proceed...
         if(proceed) 
         {
+			notice.removeClass().html("Invio in corso...").addClass("alert alert-info").fadeIn(400);
             //data to be sent to server
             post_data = {'userName':user_name, 'userEmail':user_email, 'userSubject':user_subject, 'userMessage':user_message};
             
@@ -84,7 +100,7 @@ $(document).ready(function() {
                 if(response.type == 'error')
                 {
                     output = response.text;
-		notice.removeClass().html(output).addClass("alert alert-warning alert-dismissable").fadeIn(400);
+		notice.removeClass().html(output).addClass("alert alert-warning").fadeIn(400);
                 }else{
                 
                     output = response.text;
@@ -92,7 +108,7 @@ $(document).ready(function() {
                     //reset values in all input fields
                     $('#contact_form input').val(''); 
                     $('#contact_form textarea').val(''); 
-		notice.removeClass().html(output).addClass("alert alert-success alert-dismissable").fadeIn(400);
+		notice.removeClass().html(output).addClass("alert alert-success").fadeIn(400);
                 }
                 
             }, 'json');

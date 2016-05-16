@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section class="hgroup">
           <div class="container">
                <h1><?php echo $title; ?></h1>
-               <h2>Description of the project dapibus, tellus ac cursus commodo.</h2>
+               <h2>Sottotitolo</h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
                     <li><a href="<?php echo site_url('imbarcazioni'); ?>">Imbarcazioni</a> </li>
@@ -48,12 +48,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="col-sm-4 col-md-4">
                          <article class="portfolio_details">
-                              <h2 class="section_header">A few words about the project</h2>
+						
+                              <h2 class="section_header">Descrizione</h2>
                               <p>In hac habitasse platea dictumst. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla. Praesent mollis felis at nulla fermentum mattis. Vivamus vestibulum neque quis nunc convallis venenatis. Nulla tristique lorem sit amet ipsum ornare sit amet feugiat nulla condimentum. Sed faucibus volutpat nunc, at ullamcorper augue elementum id. Quisque at lectus leo, nec placerat mi. Curabitur egestas eleifend interdum. Suspendisse potenti. Suspendisse nec risus fermentum sapien congue fermentum sed at lorem. </p>
                               <br>
                               <br>
                               <div>
-								  <p class="bg-primary">Caratteristiche tecniche</p>
+								  <h2 class="section_header">Caratteristiche tecniche
+									<select id="car_lingua" class="form-control input-sm pull-right">
+										<option value=1>Italiano</option>
+										<option value=2>English</option>
+										<option value=3>Francais</option>
+										<option value=4>Espanol</option>
+									</select>
+								  </h2> 
                                   <p><strong>Date:</strong> November 2013</p>
 								  <p><strong>Client:</strong> Plethora Inc.</p>
 								  <p><strong>Category:</strong> Design</p>
@@ -65,9 +73,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</article>
                     </div>
                </div>
-               <div class="row areasensitive">
+               <div class="row areasensitive hidden-xs">
 					<div class="col-xs-12">
-						<p class="bg-primary">Area sensitive</p>
+						<h2 class="section_header">Area sensitive (v. /var/www/html/map)</h2>
 					</div>
 					<div class="col-sm-8 col-md-8">
 						<p>immagine sensitive</p>

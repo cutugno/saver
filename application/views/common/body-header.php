@@ -25,9 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                </div>
           </div>
           <div id="social_media_wrapper"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-envelope"></i></a> </div>
-          <div id="sign">
-			<div class="flags" id="ita_flag"></div>
-			<div class="flags" id="eng_flag"></div>
+          <div id="sign"><small>[English version]</small>
           </div>
      </div>
 </header>
