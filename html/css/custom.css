@@ -79,3 +79,7 @@ p.bg-primary {
 .portfolio_description h3 {
 	color: #428bca;
 }
+
+#car_lingua {
+	width: auto;
+}
