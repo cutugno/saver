@@ -10,7 +10,7 @@ class Contatti extends CI_Controller {
 		$data['contattiactive']=" class='active'";
 		
 		// mappa
-		$data['mapid']="map";
+		$data['mapcontclass']="map-contatti";
 		
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);

@@ -7,8 +7,12 @@
    color: #333;
 }
 
-.full_page_photo #map-rete {
-  height: 600px;
+.map-contatti, .map-contatti > div#map{
+	height: 400px;
+}
+
+.map-rete, .map-rete > div#map {
+	height: 500px;
 }
 
 .scheda-affiliato {
