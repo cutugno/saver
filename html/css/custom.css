@@ -3,7 +3,8 @@
 }
 
 .team_member {
-   background: url(../images/wild_oliva_dark.png);  
+   background: url(../images/wild_oliva_light_head.png);  
+   color: #333;
 }
 
 .full_page_photo #map-rete {
@@ -69,4 +70,8 @@ p.bg-primary {
 
 .areasensitive {
 	margin-top: 20px;
+}
+
+.portfolio_description h3 {
+	color: #428bca;
 }

@@ -45,7 +45,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               </a>
                               <div class="portfolio_description">
                                    <h3>Lorem Ipsum</h3>
-
                               </div>
                          </div>
                     </div>

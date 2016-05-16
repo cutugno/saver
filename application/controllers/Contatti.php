@@ -16,7 +16,7 @@ class Contatti extends CI_Controller {
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-map',$data);
 		$this->load->view('common/body-main-start');
-		$this->load->view('rete');
+		$this->load->view('contatti');
 		$this->load->view('common/body-footer');
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
