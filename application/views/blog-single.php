@@ -5,11 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section class="hgroup">
           <div class="container">
                <h1>Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus.</h1>
-               <h2><i class="fa-time"></i> March 1, 2013 <a href="#post_comments"><i class="fa-comments-alt"></i> 6 comments</a></h2>
+               <h2><i class="fa-time"></i> March 1, 2013</h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li><a href="<?php echo site_url('blog'); ?>">Blog</a></li>
-                    <li><a href="<?php echo site_url('blog/news'); ?>">News</a></li>
+                    <li><a href="<?php echo site_url($bc_link); ?>"><?php echo $titolo; ?></a></li>
                     <li class="active">Titolo</a></li>
                </ul>
           </div>
@@ -42,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          </article>                         
                     </div>
                     <div id="sidebar" class="col-sm-4 col-md-4">
-                         <?php echo $widget_categorie; ?>
+                         <?php // echo $widget_categorie; ?>
                          <?php echo $widget_letti; ?>
                     </div>
                </div>

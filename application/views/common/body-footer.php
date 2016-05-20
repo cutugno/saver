@@ -21,30 +21,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <div class="container">
                     <div class="row">
                          <div class="footer_teaser col-sm-4 col-md-4">
-                              <h3>About us</h3>
-                              <p>Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters.</p>
-                              <p><i class="fa fa-map-marker"></i> 3 Athens street</p>
-                              <p><i class="fa fa-phone"></i> (+30) 265-9987</p>
-                              <p><i class="fa fa-print"></i> (+30) 9854-7855</p>
-                              <p><i class="fa fa-envelope"></i> hello@restarttheme.com</p>
+                              <h3>Contatti</h3>
+                              <p><i class="fa fa-map-marker"></i> Viale Regione Siciliana, 32 - Loc.tà Zappardino - 98060 Piraino (ME)</p>
+                              <p><i class="fa fa-phone"></i> 0941 302147</p>
+                              <p><i class="fa fa-print"></i> 0941 303534</p>
+                              <p><i class="fa fa-envelope"></i> <a href="mailto:saverimbarcazioni@tiscali.it">saverimbarcazioni@tiscali.it</a></p>
                          </div>
                          <div class="footer_teaser col-sm-4 col-md-4">
-                              <h3>Latest News</h3>
+                              <h3>Ultime notizie</h3>
                               <ul class="media-list">
                                    <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t5.jpg)"></a> <a href="#" class="media-date">19<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Media heading, this is a title of a news...</a></h5>
+                                        <h5 class="media-heading"><a href="#">Vivamus fringilla neque nibh, quis vestibulum lorem...</a></h5>
                                         <p>Fugiat dapibus, tellus ac cursus commodo, ut fermentum...</p>
                                    </li>
                                    <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t4.jpg)"></a> <a href="#" class="media-date">18<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Media heading, of a news item.</a></h5>
+                                        <h5 class="media-heading"><a href="#">Maecenas convallis finibus semper. Sed sagittis, velit...</a></h5>
                                         <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
                                    </li>
                               </ul>
                          </div>
-                         <div class="footer_teaser col-sm-4 col-md-4" id="latest-flickr-images">
-                              <h3>FlickrFeed</h3>
-                              <ul></ul> <p>All photos © by <a href="http://www.dimitragiannouka.com" target="_blank">Dimitra Giannouka</a>.</p>
+
+                         <div class="footer_teaser col-sm-4 col-md-4" >
+                              <h3>Social</h3>
+
                          </div>
+                         
                     </div>
                </div>
           </section>

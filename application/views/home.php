@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<section class="call_to_action">
           <div class="container">
-               <h3>focus on what’s important</h3>
+               <h3>Quisque aliquam orci sed purus</h3>
                <h4>Non paghi la tassa di possesso!</h4>
                <a class="btn btn-primary btn-lg" href="#">Scopri di più</a>
           </div>     
@@ -14,16 +14,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="container">
                <div class="row">
                     <div class="feature_teaser col-sm-4 col-md-4"> <img alt="responsive" src="<?php echo base_url('images/teaser-1.png'); ?>">
-                         <h3>Clean, Responsive Design</h3>
-                         <p>A multipurpose but mainly<strong> business oriented</strong> design, built to serve as a foundation for your web projects. Suspendisse nec risus fermentum sapien congue fermentum sed at lorem.</p>
+                         <h3>Integer velit augue, gravida nec</h3>
+                         <p>Suspendisse diam nisi, laoreet eu <strong>pharetra faucibus</strong>, placerat ultricies dolor. Phasellus vitae fringilla ipsum, at fringilla sem. Proin ut pellentesque sem. Integer aliquam magna enim.</p>
                     </div>
                     <div class="feature_teaser col-sm-4 col-md-4"> <img alt="responsive" src="<?php echo base_url('images/teaser-2.png'); ?>">
-                         <h3>Based on Twitter Bootstrap</h3>
-                         <p>The front-end development framework with a <strong>steep learning curve</strong>. It changes the way you develop sites. Suspendisse nec risus fermentum sapien congue fermentum sed at lorem.</p>
+                         <h3>Nullam vehicula mollis ligula</h3>
+                         <p>Donec gravida in tortor eget ultrices. <strong>Maecenas condimentum rhoncus</strong> felis, a pellentesque lectus gravida iaculis. Quisque eget odio pharetra.</p>
                     </div>
                     <div class="feature_teaser col-sm-4 col-md-4"> <img alt="responsive" src="<?php echo base_url('images/teaser-3.png'); ?>">
-                         <h3>Makes real use of {LESS}</h3>
-                         <p><strong>Restart</strong> comes with a style.less file that tries to use all the power of <strong>{less} and bootstrap combined</strong>. Suspendisse nec risus fermentum sapien congue fermentum sed at lorem.</p>
+                         <h3>Integer euismod, nulla vel</h3>
+                         <p><strong>Aenean</strong> quis est at tortor iaculis vehicula eu sit amet tellus. Quisque imperdiet eros placerat nisi cursus dapibus eu vitae libero. Etiam viverra mattis leo ut ultrices.</p>
                     </div>
                </div>
           </div>

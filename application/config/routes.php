@@ -50,8 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['cookie'] = 'home/cookie';
-$route['blog/(:any)/(:num)'] = 'blog/single/$2';
-$route['blog/(:any)'] = 'blog/category/$1';
+$route['notizie/(:any)/(:num)'] = 'blog/single/1/$2';
+$route['rassegna-stampa/(:any)/(:num)'] = 'blog/single/2/$2';
+$route['notizie'] = 'blog/index/1';
+$route['rassegna-stampa'] = 'blog/index/2';
 $route['rete-vendita'] = 'rete';
 $route['imbarcazioni/(:any)/(:any)/(:num)'] = 'imbarcazioni/single/$3';
 $route['imbarcazioni/(:any)'] = 'imbarcazioni/index/$1';

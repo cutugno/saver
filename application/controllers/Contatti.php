@@ -6,7 +6,7 @@ class Contatti extends CI_Controller {
 	public function index() {
 		
 		// menu active
-		$data['blogactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
 		$data['contattiactive']=" class='active'";
 		
 		// mappa
