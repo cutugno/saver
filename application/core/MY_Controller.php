@@ -14,6 +14,9 @@ class MY_Controller extends CI_Controller {
 				if (!$check) redirect('service');
 			}
 			
+			$this->session->lang ? $lang=$this->session->lang : $lang="italian";
+			$this->lang->load('custom',$lang);
+			
         }
         
         protected function checkService () {

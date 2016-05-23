@@ -33,7 +33,7 @@
 }
 
 .navbar .nav li.active ul.dropdown-menu li a:hover {
-	border-bottom: solid 1px #428bca;
+	border-bottom: solid 1px #43a331;
 }
 
 .flags {
@@ -77,7 +77,7 @@ p.bg-primary {
 }
 
 .portfolio_description h3 {
-	color: #428bca;
+	color: #43a331;
 }
 
 #car_lingua {

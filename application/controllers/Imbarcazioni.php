@@ -49,7 +49,7 @@ class Imbarcazioni extends CI_Controller {
 		if (empty($id)) redirect('imbarcazioni');
 		
 		// menu active
-		$data['blogactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
 		$data['imbarcazioniactive']=" active";
 		
 		// dati imbarcazione

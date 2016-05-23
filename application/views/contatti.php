@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <div class="row">
                     <div class="office_address col-sm-4 col-md-4">
                          <div class="team_member">
-                         	<img src="images/restart_logo.png" width="90" height="90" alt="logo">
+                         	<img src="images/logo_saver.png" alt="Logo Saver">
                          	<h5>SAVER</h5>
                               <small>Cantiere Nautico</small><br><br>
                               <div class="team_social"> <a href="https://www.facebook.com/saversrl.imbarcazioni" target="_blank"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-envelope"></i></a> </div>

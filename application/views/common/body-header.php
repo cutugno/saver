@@ -5,7 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <header>
      <div class="container">
           <div class="navbar navbar-default" role="navigation">
-               <div class="navbar-header"><a class="navbar-brand" href="<?php echo base_url(); ?>"> <img src="<?php echo base_url('images/restart_logo.png'); ?>" alt="optional logo" height="90" width="90"> <span class="logo_title">{re}<strong>start</strong></span> <span class="logo_subtitle">a multipurpose template</span> </a><a class="btn btn-navbar btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="nb_left pull-left"> <span class="fa fa-reorder"></span></span> <span class="nb_right pull-right">menu</span> </a></div>
+               <div class="navbar-header">
+				   <a class="navbar-brand" href="<?php echo base_url(); ?>"> 
+					<img src="<?php echo base_url('images/logo_saver.png'); ?>" alt="Logo Saver"> 
+				   </a>
+				   <a class="btn btn-navbar btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="nb_left pull-left"> <span class="fa fa-reorder"></span></span> <span class="nb_right pull-right">menu</span> </a>
+			   </div>
                <div class="collapse navbar-collapse">
                     <ul class="nav pull-right navbar-nav">
                          <li<?php echo $notizieactive; ?>><a href="<?php echo site_url('notizie'); ?>">Notizie</a></li>
