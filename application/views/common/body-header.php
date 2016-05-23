@@ -13,25 +13,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   </div>
                <div class="collapse navbar-collapse">
                     <ul class="nav pull-right navbar-nav">
-                         <li<?php echo $notizieactive; ?>><a href="<?php echo site_url('notizie'); ?>">Notizie</a></li>
-                         <li<?php echo $aziendaactive; ?>><a href="<?php echo site_url('azienda'); ?>">Azienda</a></li>
-                          <li class="dropdown<?php echo $imbarcazioniactive; ?>"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">Imbarcazioni<span class="caret"></span></a>
+                         <li<?php echo $notizieactive; ?>><a href="<?php echo site_url('notizie'); ?>"><?php echo $this->lang->line('menu_1'); ?></a></li>
+                         <li<?php echo $aziendaactive; ?>><a href="<?php echo site_url('azienda'); ?>"><?php echo $this->lang->line('menu_2'); ?></a></li>
+                          <li class="dropdown<?php echo $imbarcazioniactive; ?>"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $this->lang->line('menu_3'); ?><span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-open'); ?>">Linea Open</a></li>
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-walk-around'); ?>">Linea Walk Around</a></li>
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-fisher'); ?>">Linea Fisher</a></li>
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-cabin'); ?>">Linea Cabin</a></li>
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-gommoni-mg'); ?>">Linea Gommoni MG</a></li>
+                                   <li><a href="<?php echo site_url('imbarcazioni/linea-open'); ?>"><?php echo $this->lang->line('menu_31'); ?></a></li>
+                                   <li><a href="<?php echo site_url('imbarcazioni/linea-walk-around'); ?>"><?php echo $this->lang->line('menu_32'); ?></a></li>
+                                   <li><a href="<?php echo site_url('imbarcazioni/linea-fisher'); ?>"><?php echo $this->lang->line('menu_33'); ?></a></li>
+                                   <li><a href="<?php echo site_url('imbarcazioni/linea-cabin'); ?>"><?php echo $this->lang->line('menu_34'); ?></a></li>
+                                   <li><a href="<?php echo site_url('imbarcazioni/linea-gommoni-mg'); ?>"><?php echo $this->lang->line('menu_35'); ?></a></li>
                               </ul>
                          </li>
-                         <li<?php echo $reteactive; ?>><a href="<?php echo site_url('rete-vendita'); ?>">Rete Vendita</a></li>
-                         <li<?php echo $rassegnaactive; ?>><a href="<?php echo site_url('rassegna-stampa'); ?>">Rassegna Stampa</a></li>
-                         <li<?php echo $contattiactive; ?>><a href="<?php echo site_url('contatti'); ?>">Contatti</a></li>                                              
+                         <li<?php echo $reteactive; ?>><a href="<?php echo site_url('rete-vendita'); ?>"><?php echo $this->lang->line('menu_4'); ?></a></li>
+                         <li<?php echo $rassegnaactive; ?>><a href="<?php echo site_url('rassegna-stampa'); ?>"><?php echo $this->lang->line('menu_5'); ?></a></li>
+                         <li<?php echo $contattiactive; ?>><a href="<?php echo site_url('contatti'); ?>"><?php echo $this->lang->line('menu_6'); ?></a></li>                                              
                     </ul>
                </div>
           </div>
           <div id="social_media_wrapper"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-envelope"></i></a> </div>
-          <div id="sign"><small>[English version]</small>
+          <div id="sign"><small><?php echo $lang_vers; ?></small>
           </div>
      </div>
 </header>

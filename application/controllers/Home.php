@@ -1,9 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends MY_Controller {
 
 	public function index() {
+		
+		// menu lingua
+        $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
 		
 		// menu active
 		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
@@ -44,7 +47,7 @@ class Home extends CI_Controller {
                     </div>
                   -->
                </li>
-        ";
+        ";       
 		
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);

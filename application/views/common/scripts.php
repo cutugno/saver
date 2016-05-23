@@ -15,3 +15,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="<?php echo base_url('js/wow.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/snap.svg-min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('js/restart_theme.js'); ?>"></script>
+
+<script type="text/javascript">
+	// cambia lingua
+	$("#c_lan").click(function() {
+		var lang=$(this).attr("lang");
+		var url="<?php echo site_url('lingua'); ?>";
+		var dati="lang="+lang;
+		// chiamata ajax a controller che cambia sessione lingua
+		$.post(url,dati,function(data) {
+			window.location.reload();
+		});
+	});
+</script>

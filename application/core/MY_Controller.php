@@ -15,6 +15,7 @@ class MY_Controller extends CI_Controller {
 			}
 			
 			$this->session->lang ? $lang=$this->session->lang : $lang="italian";
+			$this->session->lang=$lang;
 			$this->lang->load('custom',$lang);
 			
         }
