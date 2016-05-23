@@ -29,7 +29,7 @@ $.fn.euCookieLawPopup = (function() {
 	// PARAMETERS (MODIFY THIS PART) //////////////////////////////////////////////////////////////
 	_self.params = {
 		cookiePolicyUrl : '/cookie',
-		popupPosition : 'bottomleft',
+		popupPosition : 'bottom',
 		colorStyle : 'default',
 		compactStyle : false,
 		popupTitle : 'Questo sito utilizza cookie',
