@@ -48,6 +48,9 @@ class Blog extends MY_Controller {
 		
 		if (empty($id)) redirect('blog');
 		
+		// menu lingua
+        $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
+		
 		// menu active
 		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
 
