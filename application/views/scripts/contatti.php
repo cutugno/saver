@@ -3,7 +3,7 @@
 google.maps.event.addDomListener(window, 'load', init);
 
 function init() {
-	var myLatlng = new google.maps.LatLng(38.1662186,14.8969281); 
+	var myLatlng = new google.maps.LatLng(38.1667252,14.8962394); 
 
 	// altre opzioni -> https://developers.google.com/maps/documentation/javascript/reference#MapOptions
 	var mapOptions = {
