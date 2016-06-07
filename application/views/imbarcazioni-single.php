@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      </section>
      <section>
 		 <?php // var_dump ($prodotto); ?>
-		 <?php var_dump ($media); ?>
+		 <?php // var_dump ($media); ?>
           <div class="container imbarcazione">
                <div class="row">
                     <div class="col-sm-8 col-md-8">
@@ -55,19 +55,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <br>
                               <br>
                               <div>
-								  <h2 class="section_header">Caratteristiche tecniche
+								  <h2 class="section_header">Caratteristiche
 									<select id="car_lingua" class="form-control input-sm pull-right">
-										<option value=1>Italiano</option>
-										<option value=2>English</option>
-										<option value=3>Francais</option>
-										<option value=4>Espanol</option>
+										<option value="car_it">Italiano</option>
+										<option value="car_en">English</option>
+										<option value="car_fr">Francais</option>
+										<option value="car_es">Espanol</option>
 									</select>
 								  </h2> 
+								  <!--ita -->
+								  <div class="carcont" id="car_it">								  
+									  <p class="lead">Caratteristiche tecniche</p>
+										 <?php foreach ($prodotto->car_it->ct as $key=>$val) : ?>
+											<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
+										<?php endforeach ?>
+									  </p><br>
+									  <p class="lead">Dotazione di serie</p>
+										 <?php 
+											echo $prodotto->car_it->dot;
+										 ?> 
+									  </p><br>
+									  <p class="lead">Dotazione extra</p>
+										 <?php 
+											echo $prodotto->car_it->extra;
+										 ?>
+									  </p>
+								  </div>
+								  <!--eng -->
+								  <div class="carcont"  id="car_en" style="display:none">								  
+									  <p class="lead">Caratteristiche tecniche</p>
+										 <?php foreach ($prodotto->car_en->ct as $key=>$val) : ?>
+											<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
+										<?php endforeach ?>
+									  </p><br>
+									  <p class="lead">Dotazione di serie</p>
+										 <?php 
+											echo $prodotto->car_en->dot;
+										 ?> 
+									  </p><br>
+									  <p class="lead">Dotazione extra</p>
+										 <?php 
+											echo $prodotto->car_en->extra;
+										 ?>
+									  </p>
+								  </div>
+								  <!--
                                   <p><strong>Date:</strong> November 2013</p>
 								  <p><strong>Client:</strong> Plethora Inc.</p>
 								  <p><strong>Category:</strong> Design</p>
 								  <p><strong>Place:</strong> Europe</p>
 								  <p><strong>Rating:</strong><span class="rating r5"></span></p>
+								  -->
                               </div>
                               <br>
                               <br>

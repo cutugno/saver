@@ -47,6 +47,8 @@ class Imbarcazioni extends MY_Controller {
 		
 		// dati prodotto
 		$prodotto=$this->prodotti_model->getProdottobyId($id);
+		$prodotto->car_it=json_decode($prodotto->car_it);
+		$prodotto->car_en=json_decode($prodotto->car_en);
 		$data['prodotto']=$prodotto;
 		
 		// dati media prodotto

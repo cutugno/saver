@@ -43,5 +43,13 @@
 	  changeVideoHeight(".owl-carousel .item-video");
 	});
 	
+	// cambio lingua caratteristiche
+	$("#car_lingua").change(function(){
+		var lang=$(this).val();
+		$(".carcont").hide();
+		$("#"+lang).show();
+		
+	});
+	
 </script>
 
