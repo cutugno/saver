@@ -17,38 +17,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="container">
                <div class="row">
                     <div id="leftcol" class="col-sm-8 col-md-8">
-						<?php foreach ($news as $val) : ?>
-                         <article class="post">
-                              <div class="post_header">
-                                   <h3 class="post_title"><a href="<?php echo site_url(uri_string()."/".$val->slug."/".$val->id); ?>"><?php echo $val->titolo; ?></a></h3>
-                                   <div class="post_sub"><i class="fa fa-clock-o"></i> Pubblicato il <strong><?php echo $val->data_ins; ?></strong></div>
-                              </div>
-                              <div class="post_content">
-								  <?php if (null!=$val->allegati) : ?>
-                                   <figure>
-									   <img alt="<?php echo $val->titolo; ?>" src="<?php echo base_url($val->allegati->url); ?>">
-								   </figure>
-								   <?php endif ?>
-                                   <p><?php echo word_limiter($val->testo,30); ?></p>
-                                   <a href="<?php echo site_url(uri_string()."/".$val->slug."/".$val->id); ?>" class="btn btn-primary">Leggi tutto</a> 
-                              </div>
-                         </article>
-                         <?php endforeach ?>
+						<?php if (null!=$news) : ?>
+							<?php foreach ($news as $val) : ?>
+							 <article class="post">
+								  <div class="post_header">
+									   <h3 class="post_title"><a href="<?php echo site_url(uri_string()."/".$val->slug."/".$val->id); ?>"><?php echo $val->titolo; ?></a></h3>
+									   <div class="post_sub"><i class="fa fa-clock-o"></i> Pubblicato il <strong><?php echo $val->data_ins; ?></strong></div>
+								  </div>
+								  <div class="post_content">
+									  <?php if (null!=$val->allegati) : ?>
+									   <figure>
+										   <img alt="<?php echo $val->titolo; ?>" src="<?php echo base_url($val->allegati->url); ?>">
+									   </figure>
+									   <?php endif ?>
+									   <p><?php echo word_limiter($val->testo,30); ?></p>
+									   <a href="<?php echo site_url(uri_string()."/".$val->slug."/".$val->id); ?>" class="btn btn-primary">Leggi tutto</a> 
+								  </div>
+							 </article>
+							 <?php endforeach ?>
                          
-                         <div class="pagination_wrapper">
-							 <?php echo $pages; ?>
-                              <!--
-                              <ul class="pagination pagination-centered">
-                                   <li class="disabled"><a href="#">«</a></li>
-                                   <li class="active"><a href="#">1</a></li>
-                                   <li><a href="#">2</a></li>
-                                   <li><a href="#">3</a></li>
-                                   <li><a href="#">4</a></li>
-                                   <li><a href="#">5</a></li>
-                                   <li><a href="#">»</a></li>
-                              </ul>
-                              -->
-                         </div>
+							<div class="pagination_wrapper">
+								 <?php echo $pages; ?>
+								  <!--
+								  <ul class="pagination pagination-centered">
+									   <li class="disabled"><a href="#">«</a></li>
+									   <li class="active"><a href="#">1</a></li>
+									   <li><a href="#">2</a></li>
+									   <li><a href="#">3</a></li>
+									   <li><a href="#">4</a></li>
+									   <li><a href="#">5</a></li>
+									   <li><a href="#">»</a></li>
+								  </ul>
+								  -->
+							 </div>
+						<?php else : ?>
+						Nessuna news disponibile
+						<?php endif ?>
                     </div>
                     <div id="sidebar" class="col-sm-4 col-md-4">
                          <?php // echo $widget_categorie; ?>

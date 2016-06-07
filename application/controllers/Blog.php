@@ -26,7 +26,6 @@ class Blog extends MY_Controller {
 				$data['titolo']="Rassegna Stampa";
 				$data['sottotitolo']="Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.";
 				$data['rassegnaactive']=" class='active'";
-				$data['url_single']="rassegna-stampa/titolo/1";
 				break;
 		}		
 		
