@@ -27,9 +27,19 @@
 			
 		}
 		
+		public function getNewsbyId($id) {
+			
+			$query=$this->db->get_where('news', array('id' => $id));		
+			return $query->row();
+			
+		}
+		
 		public function getNewsAllegati($idnews) {
 			
-			$query=$this->db->get_where('allegati', array('id_news' => $idnews));		
+			$query=$this->db->select('*')
+						->where('id_news',$idnews)
+						->order_by('tipologia')
+						->get('allegati');
 			return $query->result();
 			
 		}	

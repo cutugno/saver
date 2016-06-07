@@ -2,11 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Blog extends MY_Controller {
-
-	public function index($cat,$start=0) {
+	
+	public function __construct() {
+		parent::__construct();
 		
 		$this->load->model('news_model');
-			
+	}
+
+	public function index($cat,$start=0) {
+				
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
 		
@@ -17,14 +21,14 @@ class Blog extends MY_Controller {
 		// specifiche pagina per differenziare notizie e rassegna stampa
 		switch ($cat) {
 			case 1:
-				$data['titolo']="Notizie";
-				$data['sottotitolo']="Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.";
+				$data['titolocat']="Notizie";
+				$data['sottotitolocat']="Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.";
 				$data['notizieactive']=" class='active'";				
 				break;
 			case 2:
 				
-				$data['titolo']="Rassegna Stampa";
-				$data['sottotitolo']="Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.";
+				$data['titolocat']="Rassegna Stampa";
+				$data['sottotitolocat']="Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.";
 				$data['rassegnaactive']=" class='active'";
 				break;
 		}		
@@ -37,7 +41,6 @@ class Blog extends MY_Controller {
 			$news[$key]->data_ins=convertDateTime($news[$key]->data_ins);
 			// aggiungo eventuali prima immagine a news
 			$allegati=$this->news_model->getNewsFirstImage($val->id);
-			var_dump ($allegati);
 			$news[$key]->allegati=$allegati ? $allegati : "";
 		}
 		$data['news']=$news;
@@ -85,7 +88,7 @@ class Blog extends MY_Controller {
 	public function single($cat,$id) {
 		
 		if (empty($id)) redirect('blog');
-		
+
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
 		
@@ -95,16 +98,24 @@ class Blog extends MY_Controller {
 		// menu active e varie
 		switch ($cat) {
 			case 1:
-				$data['titolo']="Notizie";
-				$data['bc_link']="notizie";
+				$data['titolocat']="Notizie";
 				$data['notizieactive']=" class='active'";
 				break;
 			case 2:
-				$data['titolo']="Rassegna stampa";
-				$data['bc_link']="rassegna-stampa";
+				$data['titolocat']="Rassegna stampa";
 				$data['rassegnaactive']=" class='active'";
 				break;
-		}		
+		}	
+		
+		// dati singolo articolo
+		$single=$this->news_model->getNewsbyId($id);
+		// aggiungo allegati
+		$allegati=$this->news_model->getNewsAllegati($id);
+		$single->allegati=$allegati ? $allegati : "";
+		// formatto data
+		$single->data_ins=convertDateTime($single->data_ins);
+		$data['single'] = $single;	
+			
 			
 		// widget categorie (non serve probabilmente)
 		$data['widget_categorie']=$this->load->view('widget/categorie',$data,TRUE);

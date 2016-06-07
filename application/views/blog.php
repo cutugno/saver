@@ -4,11 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
 	<section class="hgroup">
           <div class="container">
-               <h1><?php echo $titolo; ?></h1>
-               <h2><?php echo $sottotitolo; ?></h2>
+               <h1><?php echo $titolocat; ?></h1>
+               <h2><?php echo $sottotitolocat; ?></h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li class="active"><?php echo $titolo; ?></li>
+                    <li class="active"><?php echo $titolocat; ?></li>
                </ul>
           </div>     
      </section>
