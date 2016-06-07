@@ -31,7 +31,7 @@ function init() {
 		name: '<?php echo $val->id; ?>'
 	});
 	marker.addListener('click', function() {
-		map.setZoom(12);
+		map.setZoom(14);
 		map.setCenter(this.getPosition());
 		var info="<strong><?php echo $val->nome; ?></strong><br><?php echo $val->indirizzo; ?><br><?php echo $val->email; ?><br><?php echo $val->tel; ?><br><?php echo $val->tipologia; ?>";
 		vediInfo("#descr",info); 
