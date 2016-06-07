@@ -8,8 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <h2>Breve descrizione della categoria imbarcazioni</h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li><a href="#">Imbarcazioni</a> </li>
-                    <li class="active">Linea <?php echo $cat->categoria; ?></li>
+                    <li class="active">Imbarcazioni > Linea <?php echo $cat->categoria; ?></li>
                </ul>
           </div>
      </section>
@@ -28,9 +27,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      </section>
      <section class="portfolio_strict">
           <div class="container">
-			  		<?php var_dump ($prodotti); ?>
-               <div class="row isotope_portfolio_container">
-				   
+			  		<?php // var_dump ($prodotti); ?>
+               <div class="row isotope_portfolio_container">				   
 				   <?php foreach ($prodotti as $key=>$val) : ?>
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                          <div class="portfolio_item"> 
