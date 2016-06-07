@@ -130,6 +130,7 @@ class Blog extends MY_Controller {
 		$this->load->view('common/body-footer');
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
+		$this->load->view('scripts/blog-single');
 		$this->load->view('common/close');
 		
 	}

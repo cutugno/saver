@@ -19,13 +19,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <div class="row">
                     <div id="leftcol" class="col-sm-8 col-md-8">
                          <article class="post">
-                              <div class="post_content">
+                              <div class="post_content" id="carousel1">
 								  <?php if (null!=$single->allegati) : ?>
-										<?php if ($single->allegati[0]->tipologia==1) : ?>
-										   <figure>
-											   <img alt="<?php echo $single->titolo ; ?>" src="<?php echo base_url($single->allegati[0]->url); ?>">
+								     <?php foreach ($single->allegati as $key=>$all) : ?>
+										<?php if ($all->tipologia==1) : ?>
+										   <figure data-hash="<?php echo $key; ?>">
+											   <img alt="<?php echo $all->alt; ?>" src="<?php echo base_url($all->url); ?>">
 										   </figure>
 										<?php endif ?> 
+									  <?php endforeach ?>
 								   <?php endif ?>
                                    <p><?php echo $single->testo; ?></p>
                               </div>
