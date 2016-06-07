@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<?php foreach ($news as $val) : ?>
 							 <article class="post">
 								  <div class="post_header">
-									   <h3 class="post_title"><a href="<?php echo site_url(uri_string()."/".$val->slug."/".$val->id); ?>"><?php echo $val->titolo; ?></a></h3>
+									   <h3 class="post_title"><a href="<?php echo site_url($this->uri->segment(1)."/".$val->slug."/".$val->id); ?>"><?php echo $val->titolo; ?></a></h3>
 									   <div class="post_sub"><i class="fa fa-clock-o"></i> Pubblicato il <strong><?php echo $val->data_ins; ?></strong></div>
 								  </div>
 								  <div class="post_content">
@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									   </figure>
 									   <?php endif ?>
 									   <p><?php echo word_limiter($val->testo,30); ?></p>
-									   <a href="<?php echo site_url(uri_string()."/".$val->slug."/".$val->id); ?>" class="btn btn-primary">Leggi tutto</a> 
+									   <a href="<?php echo site_url($this->uri->segment(1)."/".$val->slug."/".$val->id); ?>" class="btn btn-primary">Leggi tutto</a> 
 								  </div>
 							 </article>
 							 <?php endforeach ?>
@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								  -->
 							 </div>
 						<?php else : ?>
-						Nessuna news disponibile
+						Nessun elemento disponibile
 						<?php endif ?>
                     </div>
                     <div id="sidebar" class="col-sm-4 col-md-4">

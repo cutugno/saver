@@ -54,3 +54,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                </div>
           </div>
      </section>
+     <section>
+          <div class="container">
+               <ul class="pager">
+                    <li class="previous"><a href="<?php echo base_url($this->uri->segment(1)); ?>">← Torna a <?php echo $titolocat; ?></a></li>          
+                       
+               </ul>
+          </div>
+     </section>
