@@ -14,7 +14,8 @@
 	  });
 	  $("#carousel2").owlCarousel({
 		loop:false,
-		items:3
+		items:3,
+		margin: 10
 	  });
 	  	  
 	});		

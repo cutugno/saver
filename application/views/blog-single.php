@@ -28,21 +28,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										   </figure>
 										<?php endif ?> 
 									  <?php endforeach ?>
-								   <?php endif ?>
-                                   <p><?php echo $single->testo; ?></p>
+								   <?php endif ?>                                   
                               </div>
+                              <p><?php echo $single->testo; ?></p>
                               <?php if (count($single->allegati)>1) : ?>
-                              <div class="row post-attachments">
-								  <?php for ($x=1;$x<count($single->allegati);$x++) : ?>
-								  <div class="attachment col-xs-12 col-sm-6 col-md-4">
+                              <div class="row post-attachments" id="carousel2">
+								  <?php for ($x=0;$x<count($single->allegati);$x++) : ?>
 									  <?php if ($single->allegati[$x]->tipologia==1) : ?>
-									  <img alt="<?php echo $single->allegati[$x]->alt; ?>" src="<?php echo base_url($single->allegati[$x]->url); ?>">
-									  <?php else : ?>
-									  <i class="fa fa-download"> <a href="<?php echo base_url($single->allegati[$x]->url); ?>">Scarica <?php echo $single->allegati[$x]->alt; ?></a> </i>									  
+									  <a href="#<?php echo $x; ?>"><img alt="<?php echo $single->allegati[$x]->alt; ?>" src="<?php echo base_url($single->allegati[$x]->url); ?>"></a>									 
 									  <?php endif ?>
-								  </div>
 								  <?php endfor ?>
                               </div>
+                                 <?php for ($x=0;$x<count($single->allegati);$x++) : ?>
+									<?php if ($single->allegati[$x]->tipologia==2) : ?>
+									  <i class="fa fa-download"> <a href="<?php echo base_url($single->allegati[$x]->url); ?>" target="_blank">Scarica <?php echo $single->allegati[$x]->alt; ?></a> </i>									  
+									<?php endif ?>
+								  <?php endfor ?>
                               <?php endif ?>
                          </article>                         
                     </div>
