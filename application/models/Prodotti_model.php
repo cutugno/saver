@@ -23,6 +23,28 @@
 			
 		}
 		
+		public function getProdottobyId($id) {
+			
+			$query=$this->db->select('prodotti.*,categorieP.categoria')
+							->join('categorieP','categorieP.id=prodotti.id_categoria')
+							->where('prodotti.id',$id)
+							->get('prodotti');
+						
+			return $query->row();
+			
+		}
+		
+		public function getMediaProdottobyId($id) {
+			
+			$query=$this->db->select('*')
+				->where('id_prodotto',$id)
+				->order_by('tipologia desc')
+				->get('media');
+				
+			return $query->result();
+			
+		}
+		
 		public function getCategoriaPbyId($id) {
 			
 			$query=$this->db->get_where('categorieP',array('id'=>$id));

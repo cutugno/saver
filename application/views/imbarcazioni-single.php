@@ -4,43 +4,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<section class="hgroup">
           <div class="container">
-               <h1><?php echo $title; ?></h1>
-               <h2>Sottotitolo</h2>
+               <h1><?php echo $prodotto->modello; ?></h1>
+               <h2><?php echo $prodotto->sottotitolo; ?></h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li><a href="<?php echo site_url('imbarcazioni'); ?>">Imbarcazioni</a> </li>
-                    <li><a href="<?php echo site_url('imbarcazioni/linea-open'); ?>">Linea Open</a> </li>
-                    <li class="active"><?php echo $title; ?></li>
+                    <li><a href="<?php echo site_url($this->uri->segment(1)."/".$this->uri->segment(2)); ?>">Imbarcazioni > Linea <?php echo $prodotto->categoria; ?></a> </li>
+                    <li class="active"><?php echo $prodotto->modello; ?></li>
                </ul>
           </div>
      </section>
      <section>
+		 <?php // var_dump ($prodotto); ?>
+		 <?php var_dump ($media); ?>
           <div class="container imbarcazione">
                <div class="row">
                     <div class="col-sm-8 col-md-8">
 						<div class="row">
 							<div class="col-xs-12 carousel" id="carousel1">
-								  <div class="item-video" data-hash="5">
+							  <?php foreach ($media as $key=>$val) : ?>
+								  <?php if ($val->tipologia==2) : ?>
+								  <div class="item-video" data-hash="<?php echo $key; ?>">
 									  <div class="owl-video-wrapper">
 										<div class="owl-video-play-icon"></div>
-										<div class="owl-video-tn owl-lazy" data-src="http://img.youtube.com/vi/JpxsRwnRwCQ/hqdefault.jpg" style="opacity: 1; background-image: url('http://img.youtube.com/vi/JpxsRwnRwCQ/hqdefault.jpg');"></div>
-										<a class="owl-video" href="https://www.youtube.com/watch?v=JpxsRwnRwCQ&autoplay=1"></a>
+										<div class="owl-video-tn owl-lazy" data-src="<?php echo $val->url; ?>" style="opacity: 1; background-image: url('<?php echo $val->url_tn; ?>');"></div>
+										<a class="owl-video" href="<?php echo $val->url; ?>"></a>
 									  </div>						  
-								  </div>	
-								  <div data-hash="1"><img src="<?php echo base_url('images/media1.jpg'); ?>" alt=""></div>
-								  <div data-hash="2"><img src="<?php echo base_url('images/media2.jpg'); ?>" alt=""></div>
-								  <div data-hash="3"><img src="<?php echo base_url('images/media3.jpg'); ?>" alt=""></div>
-								  <div data-hash="4"><img src="<?php echo base_url('images/media4.jpg'); ?>" alt=""></div>
+								  </div>
+								  <?php else: ?>								  	
+								  <div data-hash="<?php echo $key; ?>"><img src="<?php echo base_url($val->url); ?>" alt=""></div>
+								  <?php endif ?>
+							  <?php endforeach ?>	
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
 								  <div id="carousel2">	
-									  <div><a href="#5"><img src="<?php echo base_url('images/video.jpg'); ?>" alt=""></a></div>				  
-									  <div><a href="#1"><img src="<?php echo base_url('images/media1.jpg'); ?>" alt=""></a></div>
-									  <div><a href="#2"><img src="<?php echo base_url('images/media2.jpg'); ?>" alt=""></a></div>
-									  <div><a href="#3"><img src="<?php echo base_url('images/media3.jpg'); ?>" alt=""></a></div>
-									  <div><a href="#4"><img src="<?php echo base_url('images/media4.jpg'); ?>" alt=""></a></div>						  					 
+									  <?php foreach ($media as $key=>$val) : ?>
+									  <div><a href="#<?php echo $key; ?>"><img src="<?php echo $val->tipologia==1 ? base_url($val->url_tn) : base_url('images/video.jpg'); ?>" alt=""></a></div>				  
+									 <?php endforeach ?>			  					 
 								  </div>		
 							</div>
 						</div>	
@@ -50,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          <article class="portfolio_details">
 						
                               <h2 class="section_header">Descrizione</h2>
-                              <p>In hac habitasse platea dictumst. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla. Praesent mollis felis at nulla fermentum mattis. Vivamus vestibulum neque quis nunc convallis venenatis. Nulla tristique lorem sit amet ipsum ornare sit amet feugiat nulla condimentum. Sed faucibus volutpat nunc, at ullamcorper augue elementum id. Quisque at lectus leo, nec placerat mi. Curabitur egestas eleifend interdum. Suspendisse potenti. Suspendisse nec risus fermentum sapien congue fermentum sed at lorem. </p>
+                              <p><?php echo $prodotto->descr; ?></p>
                               <br>
                               <br>
                               <div>

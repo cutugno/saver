@@ -18,7 +18,7 @@
 	}
 	
 	$(document).ready(function(){
-	  $("#carousel1").owlCarousel({
+	  $("#carousel1").owlCarousel({		
 		loop:false,
 		center:true,
 		video:true,
@@ -29,7 +29,9 @@
 		animateIn: 'bounceInLeft',
 	  });
 	  $("#carousel2").owlCarousel({
-		loop:false,
+		autoplay: true,
+		autoplayTimeout: 2000,
+		loop:true,
 		items:4,
 		margin:10
 	  });

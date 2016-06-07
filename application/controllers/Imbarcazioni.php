@@ -45,6 +45,14 @@ class Imbarcazioni extends MY_Controller {
 		
 		if (empty($id)) redirect('imbarcazioni');
 		
+		// dati prodotto
+		$prodotto=$this->prodotti_model->getProdottobyId($id);
+		$data['prodotto']=$prodotto;
+		
+		// dati media prodotto
+		$media=$this->prodotti_model->getMediaProdottobyId($id);
+		$data['media']=$media;		
+		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
         

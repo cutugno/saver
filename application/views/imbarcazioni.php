@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<path d="M 180,0 0,0 0,0 180,0 z"/>
 									   </svg>
 									   <figcaption>
-											<p><?php echo $val->descr; ?></p>
+											<p><?php echo $val->sottotitolo; ?></p>
 											<div class="view_button">Vedi</div>
 									   </figcaption>
 								  </figure>
