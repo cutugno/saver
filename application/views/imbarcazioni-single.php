@@ -52,66 +52,120 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						
                               <h2 class="section_header">Descrizione</h2>
                               <p><?php echo $prodotto->descr; ?></p>
-                              <br>
-                              <br>
-                              <div>
-								  <h2 class="section_header">Caratteristiche
-									<select id="car_lingua" class="form-control input-sm pull-right">
-										<option value="car_it">Italiano</option>
-										<option value="car_en">English</option>
-										<option value="car_fr">Francais</option>
-										<option value="car_es">Espanol</option>
-									</select>
-								  </h2> 
-								  <!--ita -->
-								  <div class="carcont" id="car_it">								  
-									  <p class="lead">Caratteristiche tecniche</p>
-										 <?php foreach ($prodotto->car_it->ct as $key=>$val) : ?>
-											<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
-										<?php endforeach ?>
-									  </p><br>
-									  <p class="lead">Dotazione di serie</p>
-										 <?php 
-											echo $prodotto->car_it->dot;
-										 ?> 
-									  </p><br>
-									  <p class="lead">Dotazione extra</p>
-										 <?php 
-											echo $prodotto->car_it->extra;
-										 ?>
-									  </p>
-								  </div>
-								  <!--eng -->
-								  <div class="carcont"  id="car_en" style="display:none">								  
-									  <p class="lead">Caratteristiche tecniche</p>
-										 <?php foreach ($prodotto->car_en->ct as $key=>$val) : ?>
-											<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
-										<?php endforeach ?>
-									  </p><br>
-									  <p class="lead">Dotazione di serie</p>
-										 <?php 
-											echo $prodotto->car_en->dot;
-										 ?> 
-									  </p><br>
-									  <p class="lead">Dotazione extra</p>
-										 <?php 
-											echo $prodotto->car_en->extra;
-										 ?>
-									  </p>
-								  </div>
-								  <!--
-                                  <p><strong>Date:</strong> November 2013</p>
-								  <p><strong>Client:</strong> Plethora Inc.</p>
-								  <p><strong>Category:</strong> Design</p>
-								  <p><strong>Place:</strong> Europe</p>
-								  <p><strong>Rating:</strong><span class="rating r5"></span></p>
-								  -->
-                              </div>
-                              <br>
-                              <br>
 						</article>
                     </div>
                </div>
+               <div class="row caratteristiche" style="margin-top:20px">
+				  <div class="col-xs-12">
+					  <h2 class="section_header">Caratteristiche
+						<select id="car_lingua" class="form-control input-sm pull-right">
+							<option value="car_it">Italiano</option>
+							<option value="car_en">English</option>
+							<option value="car_fr">Francais</option>
+							<option value="car_es">Espanol</option>
+						</select>
+					  </h2> 
+				  </div>
+				  <div class="col-xs-12">
+					  <!--ita -->
+					  <div class="row carcont" id="car_it">		
+						  <div class="col-md-4">						  
+							  <p class="lead">Caratteristiche tecniche</p>
+								 <?php foreach ($prodotto->car_it->ct as $key=>$val) : ?>
+									<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
+								<?php endforeach ?>
+							  </p>
+						  </div>
+						  <div class="col-md-4">
+							  <p class="lead">Dotazione di serie</p>
+								 <?php 
+									echo $prodotto->car_it->dot;
+								 ?> 
+							  </p>
+						  </div>
+						  <div class="col-md-4">
+							  <p class="lead">Dotazione extra</p>
+								 <?php 
+									echo $prodotto->car_it->extra;
+								 ?>
+							  </p>
+						  </div>
+					   </div>
+					   <!--eng -->
+					   <div class="row carcont" id="car_en" style="display:none">		
+						  <div class="col-md-4">						  
+							  <p class="lead">Caratteristiche tecniche</p>
+								 <?php foreach ($prodotto->car_en->ct as $key=>$val) : ?>
+									<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
+								<?php endforeach ?>
+							  </p>
+						  </div>
+						  <div class="col-md-4">
+							  <p class="lead">Dotazione di serie</p>
+								 <?php 
+									echo $prodotto->car_en->dot;
+								 ?> 
+							  </p>
+						  </div>
+						  <div class="col-md-4">
+							  <p class="lead">Dotazione extra</p>
+								 <?php 
+									echo $prodotto->car_en->extra;
+								 ?>
+							  </p>
+						  </div>
+					   </div>
+					   <!-- fra -->
+					   <div class="row carcont" id="car_fr" style="display:none">		
+						  <div class="col-md-4">						  
+							  <p class="lead">Caratteristiche tecniche</p>
+								 <?php foreach ($prodotto->car_fr->ct as $key=>$val) : ?>
+									<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
+								<?php endforeach ?>
+							  </p>
+						  </div>
+						  <div class="col-md-4">
+							  <p class="lead">Dotazione di serie</p>
+								 <?php 
+									echo $prodotto->car_fr->dot;
+								 ?> 
+							  </p>
+						  </div>
+						  <div class="col-md-4">
+							  <p class="lead">Dotazione extra</p>
+								 <?php 
+									echo $prodotto->car_fr->extra;
+								 ?>
+							  </p>
+						  </div>
+					   </div>
+					   <!-- spa -->
+					   <div class="row carcont" id="car_es" style="display:none">		
+						  <div class="col-md-4">						  
+							  <p class="lead">Caratteristiche tecniche</p>
+								 <?php foreach ($prodotto->car_es->ct as $key=>$val) : ?>
+									<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
+								<?php endforeach ?>
+							  </p>
+						  </div>
+						  <div class="col-md-4">
+							  <p class="lead">Dotazione di serie</p>
+								 <?php 
+									echo $prodotto->car_es->dot;
+								 ?> 
+							  </p>
+						  </div>
+						  <div class="col-md-4">
+							  <p class="lead">Dotazione extra</p>
+								 <?php 
+									echo $prodotto->car_es->extra;
+								 ?>
+							  </p>
+						  </div>
+					   </div>
+				   </div>
+			   </div>
+  
                <div class="row areasensitive hidden-xs">
 					<div class="col-xs-12">
 						<h2 class="section_header">Area sensitive (v. /var/www/html/map)</h2>
