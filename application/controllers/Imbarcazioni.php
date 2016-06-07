@@ -16,7 +16,7 @@ class Imbarcazioni extends MY_Controller {
 		// categoria
 		$data['cat']=$this->prodotti_model->getCategoriaPbyId($cat);
 		
-		// loop imbarcazioni
+		// elenco imbarcazioni
 		$prodotti=$this->prodotti_model->getProdottibyCat($cat);
 		$data['prodotti']=$prodotti;
 		

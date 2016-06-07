@@ -182,8 +182,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <section>
           <div class="container">
                <ul class="pager">
-                    <li class="previous disabled"><a href="#">← Modello precedente</a></li>
-                    <li class="next disabled"><a href="#">Modello successivo →</a></li>
+                    <li class="previous"><a href="<?php echo site_url($this->uri->segment(1)."/".$this->uri->segment(2)); ?>">← Torna a Linea <?php echo $prodotto->categoria; ?></a></li>
                </ul>
           </div>
      </section>

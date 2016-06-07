@@ -33,7 +33,7 @@ class Blog extends MY_Controller {
 				break;
 		}		
 		
-		// loop news
+		// elenco news
 		$news=$this->news_model->getNewsbyCat($cat,$start);
 		$news_count=count($news);
 		foreach ($news as $key=>$val) {
