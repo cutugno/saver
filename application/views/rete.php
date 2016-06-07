@@ -13,11 +13,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
            </div>
       </section>
       <section>
+		  <?php // var_dump ($affiliati); ?>
           <div class="container">
                <div class="row">
                     
                     <div class="scheda-affiliato col-sm-8 col-md-8" id="descr">
-                         scheda info affiliato
                     </div>
                     <div class="col-sm-4 col-md-4">
                         <h4>Avviso per gli utenti</h4>

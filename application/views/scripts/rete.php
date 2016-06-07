@@ -22,19 +22,21 @@ function init() {
 	map = new google.maps.Map(mapElement, mapOptions);
 	
 	// loop per ogni marker 
-	var pos=new google.maps.LatLng(44.111319,12.038973); //affiliato.coord
+	<?php foreach ($affiliati as $key=>$val) : ?>
+	var pos=new google.maps.LatLng(<?php echo $val->coord; ?>);
 	var marker=new google.maps.Marker({
 		map: map,
 		position: pos,
-		title: 'Click to zoom', //affiliato.nome
-		name: 'marker1' //affiliato.id
+		title: '<?php echo $val->nome; ?>', 
+		name: '<?php echo $val->id; ?>'
 	});
 	marker.addListener('click', function() {
 		map.setZoom(12);
 		map.setCenter(this.getPosition());
-		var info="<strong>Nome 1</strong>Indirizzo 1<br>etc etc"; //affiliato.nome, affiliato.indirizzo, affiliato.email, affiliato.tel, affiliato.tipologia
+		var info="<strong><?php echo $val->nome; ?></strong><br><?php echo $val->indirizzo; ?><br><?php echo $val->email; ?><br><?php echo $val->tel; ?><br><?php echo $val->tipologia; ?>";
 		vediInfo("#descr",info); 
 	});
+	<?php endforeach ?>
 	// fine loop	
 }
 

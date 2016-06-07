@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Rete extends MY_Controller {
+	
+	public function __construct() {
+		parent::__construct();
+		
+		$this->load->model('affiliati_model');
+	}
 
 	public function index() {
 		
@@ -16,16 +22,18 @@ class Rete extends MY_Controller {
 		$data['mapcontclass']="map-rete";
 		
 		// elenco affiliati
+		$affiliati=$this->affiliati_model->getAffiliati();
+		$data['affiliati']=$affiliati;
 				
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-map');
 		$this->load->view('common/body-main-start');
-		$this->load->view('rete');
+		$this->load->view('rete',$data);
 		$this->load->view('common/body-footer');
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
-		$this->load->view('scripts/rete');
+		$this->load->view('scripts/rete',$data);
 		$this->load->view('common/close');
 		
 	}
