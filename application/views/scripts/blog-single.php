@@ -13,7 +13,10 @@
 		animateIn: 'bounceInLeft',
 	  });
 	  $("#carousel2").owlCarousel({
-		loop:false,
+		autoplay: true,
+		autoplayTimeout: 3000,
+		autoplayHoverPause: true,
+		loop:true,
 		items:3,
 		margin: 10
 	  });

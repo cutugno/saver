@@ -30,7 +30,8 @@
 	  });
 	  $("#carousel2").owlCarousel({
 		autoplay: true,
-		autoplayTimeout: 2000,
+		autoplayTimeout: 3000,
+		autoplayHoverPause: true,
 		loop:true,
 		items:4,
 		margin:10
