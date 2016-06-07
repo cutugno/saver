@@ -7,6 +7,8 @@ define ('HOME', 'http://saver.pc');
 define ('PROFILER',TRUE); // abilita/disabilita profiler e benchmark; gestito in application/core/MY_Controller
 define ('SERVICE',FALSE); // abilita/disabilita manutenzione; gestita in application/core/MY_Controller
 define ('WHITELIST', '127.0.0.1 192.168.1.110'); // elenco ip abilitati a bypassare la manutenzione
+
+define ('NEWSPERPAGE', 3);
 //define ('WHITELIST', ''); // elenco ip abilitati a bypassare la manutenzione
 
 /*

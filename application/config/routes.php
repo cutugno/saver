@@ -50,6 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['cookie'] = 'home/cookie';
+$route['notizie/(:num)'] = 'blog/index/1/$1';
+$route['rassegna-stampa/(:num)'] = 'blog/index/2/$1';
 $route['notizie/(:any)/(:num)'] = 'blog/single/1/$2';
 $route['rassegna-stampa/(:any)/(:num)'] = 'blog/single/2/$2';
 $route['notizie'] = 'blog/index/1';

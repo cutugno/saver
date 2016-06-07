@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section class="hgroup">
           <div class="container">
                <h1><?php echo $titolo; ?></h1>
-               <h2>Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.</h2>
+               <h2><?php echo $sottotitolo; ?></h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
                     <li class="active"><?php echo $titolo; ?></li>
@@ -13,47 +13,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>     
      </section>
      <section>
+		  <?php //var_dump ($news); ?>
           <div class="container">
                <div class="row">
                     <div id="leftcol" class="col-sm-8 col-md-8">
+						<?php foreach ($news as $val) : ?>
                          <article class="post">
                               <div class="post_header">
-                                   <h3 class="post_title"><a href="<?php echo site_url($url_single); ?>">Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus.</a></h3>
-                                   <div class="post_sub"><i class="fa-time"></i> March 1, 2013 </div>
+                                   <h3 class="post_title"><a href="<?php echo site_url(uri_string()."/".$val->slug."/".$val->id); ?>"><?php echo $val->titolo; ?></a></h3>
+                                   <div class="post_sub"><i class="fa fa-clock-o"></i> Pubblicato il <strong><?php echo $val->data_ins; ?></strong></div>
                               </div>
                               <div class="post_content">
+								  <?php if (null!=$val->allegati) : ?>
                                    <figure>
-									   <img alt="0" src="<?php echo base_url('images/blog-1.jpg'); ?>">
+									   <img alt="<?php echo $val->titolo; ?>" src="<?php echo base_url($val->allegati->url); ?>">
 								   </figure>
-                                   <p>Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus. Cras mattis cosi sectetut amet fermens etrsaters tum aecenas faucib sadips amets. Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus. Cras mattis cosi sectetut amet fermens etrsaters tum aecenas faucib sadips amets....</p>
-                                   <a href="<?php echo site_url($url_single); ?>" class="btn btn-primary">Leggi tutto</a> 
+								   <?php endif ?>
+                                   <p><?php echo word_limiter($val->testo,30); ?></p>
+                                   <a href="<?php echo site_url(uri_string()."/".$val->slug."/".$val->id); ?>" class="btn btn-primary">Leggi tutto</a> 
                               </div>
                          </article>
-                         <article class="post">
-                              <div class="post_header">
-                                   <h3 class="post_title"><a href="single_post.html">Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus.</a></h3>
-                                   <div class="post_sub"><i class="fa-time"></i> February 3, 2013 </div>
-                              </div>
-                              <div class="post_content">
-                                   <figure>
-                                        <iframe class="video_iframe" src="http://player.vimeo.com/video/50924290?title=0&amp;byline=0&amp;portrait=0" height="400"></iframe>
-                                   </figure>
-                                   <p>Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus. Cras mattis cosi sectetut amet fermens etrsaters tum aecenas faucib sadips amets. Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus. Cras mattis cosi sectetut amet fermens etrsaters tum aecenas faucib sadips amets....</p>
-                                   <a href="single_post.html" class="btn btn-primary">Leggi tutto</a> 
-                              </div>
-                         </article>
-                         <article class="post">
-                              <div class="post_header">
-                                   <h3 class="post_title"><a href="single_post.html">Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus.</a></h3>
-                                   <div class="post_sub"><i class="fa-time"></i> January 12, 2013 </div>
-                              </div>
-                              <div class="post_content">
-                                   <figure><a href="single_post.html"><img alt="0" src="images/portfolio/a4.jpg"></a></figure>
-                                   <p>Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus. Cras mattis cosi sectetut amet fermens etrsaters tum aecenas faucib sadips amets. Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus. Cras mattis cosi sectetut amet fermens etrsaters tum aecenas faucib sadips amets....</p>
-                                   <a href="single_post.html" class="btn btn-primary">Leggi tutto</a> 
-                              </div>
-                         </article>
+                         <?php endforeach ?>
+                         
                          <div class="pagination_wrapper">
+							 <?php echo $pages; ?>
+                              <!--
                               <ul class="pagination pagination-centered">
                                    <li class="disabled"><a href="#">«</a></li>
                                    <li class="active"><a href="#">1</a></li>
@@ -63,6 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                    <li><a href="#">5</a></li>
                                    <li><a href="#">»</a></li>
                               </ul>
+                              -->
                          </div>
                     </div>
                     <div id="sidebar" class="col-sm-4 col-md-4">
