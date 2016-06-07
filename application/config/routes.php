@@ -63,7 +63,13 @@ $route['rassegna-stampa'] = 'blog/index/2';
 
 $route['rete-vendita'] = 'rete';
 $route['imbarcazioni/(:any)/(:any)/(:num)'] = 'imbarcazioni/single/$3';
-$route['imbarcazioni/(:any)'] = 'imbarcazioni/index/$1';
+// categorie imbarcazioni
+$route['imbarcazioni/linea-open'] = $route['imbarcazioni/line-open'] = 'imbarcazioni/index/1';
+$route['imbarcazioni/linea-walk-around'] = 'imbarcazioni/index/2';
+$route['imbarcazioni/linea-fisher'] = 'imbarcazioni/index/3';
+$route['imbarcazioni/linea-cabin'] = 'imbarcazioni/index/4';
+$route['imbarcazioni/linea-gommoni-mg'] = 'imbarcazioni/index/5';
+
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -2,10 +2,23 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Imbarcazioni extends MY_Controller {
-
-	public function index($tipo) {
+	
+	public function __construct() {
+		parent::__construct();
 		
-		if (empty($tipo)) redirect(base_url());
+		$this->load->model('prodotti_model');
+	}
+
+	public function index($cat) {
+		
+		if (empty($cat)) redirect(base_url());
+		
+		// categoria
+		$data['cat']=$this->prodotti_model->getCategoriaPbyId($cat);
+		
+		// loop imbarcazioni
+		$prodotti=$this->prodotti_model->getProdottibyCat($cat);
+		$data['prodotti']=$prodotti;
 		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
@@ -14,27 +27,8 @@ class Imbarcazioni extends MY_Controller {
 		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
 		$data['imbarcazioniactive']=" active";
 		
-		// dati tipo imbarcazioni
-		switch ($tipo) {
-			case "linea-open":
-				$data['title']="Linea Open";
-				break;
-			case "linea-walk-around":
-				$data['title']="Linea Walk Around";
-				break;
-			case "linea-fisher":
-				$data['title']="Linea Fisher";
-				break;
-			case "linea-cabin":
-				$data['title']="Linea Cabin";
-				break;
-			case "linea-gommoni-mg":
-				$data['title']="Linea Gommoni MG";
-				break;
-			default:
-				show_404();
-				break;
-		}				
+		
+		
 		
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
