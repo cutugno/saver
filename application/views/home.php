@@ -32,60 +32,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="container">
                <h2 class="section_header fancy centered">Alcuni dei nostri prodotti</h2>
                <div class="portfolio_strict row">
-                    <div class="col-sm-4 col-md-4">
+				   <?php // var_dump ($prodotti); ?>
+				   <?php foreach ($prodotti as $key=>$val) : ?>
+                    <div class="col-sm-4">						
                          <div class="portfolio_item wow animated flipInX"> 
-							  <a href="<?php echo site_url('imbarcazioni/linea-open/modello/1'); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
-                              <figure style="background-image:url(<?php echo base_url('images/product-1.jpg'); ?>)">
+							  <a href="<?php echo site_url('imbarcazioni/linea-'.strtolower($val->categoria).'/'.strtolower(url_title($val->modello)).'/'.$val->id); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+                              <figure style="background-image:url(<?php echo base_url($val->img); ?>)">
                                    <svg viewBox="0 0 180 320" preserveAspectRatio="none">
                                         <path d="M 180,0 0,0 0,0 180,0 z"/>
                                    </svg>
                                    <figcaption>
-                                        <p>Descrizione del modello con parole chiave</p>
+                                        <p><?php echo $val->sottotitolo; ?></p>
                                         <div class="view_button">Vedi</div>
                                    </figcaption>
                               </figure>
                               </a>
                               <div class="portfolio_description">
-                                   <h3><a href="portfolio_item.html">Modello 1</a></h3>
+                                   <h3><a href="portfolio_item.html"><?php echo $val->modello; ?></a></h3>
                               </div>
-                         </div>
+                         </div>                         
                     </div>
-                    <div class="col-sm-4 col-md-4">
-                         <div class="portfolio_item wow animated flipInX"> 
-							  <a href="<?php echo site_url('imbarcazioni/linea-open/modello/1'); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
-                              <figure style="background-image:url(<?php echo base_url('images/product-2.jpg'); ?>)">
-                                   <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-                                        <path d="M 180,0 0,0 0,0 180,0 z"/>
-                                   </svg>
-                                   <figcaption>
-                                        <p>Descrizione del modello con parole chiave</p>
-                                        <div class="view_button">Vedi</div>
-                                   </figcaption>
-                              </figure>
-                              </a>
-                              <div class="portfolio_description">
-                                   <h3><a href="portfolio_item.html">Modello 2</a></h3>
-                              </div>
-                         </div>
-                    </div>
-                    <div class="col-sm-4 col-md-4">
-                         <div class="portfolio_item wow animated flipInX"> 
-							  <a href="<?php echo site_url('imbarcazioni/linea-open/modello/1'); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
-                              <figure style="background-image:url(<?php echo base_url('images/product-3.jpg'); ?>)">
-                                   <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-                                        <path d="M 180,0 0,0 0,0 180,0 z"/>
-                                   </svg>
-                                   <figcaption>
-                                        <p>Descrizione del modello con parole chiave</p>
-                                        <div class="view_button">Vedi</div>
-                                   </figcaption>
-                              </figure>
-                              </a>
-                              <div class="portfolio_description">
-                                   <h3><a href="portfolio_item.html">Modello 3</a></h3>
-                              </div>
-                         </div>
-                    </div>
+                    <?php endforeach ?>                    
                </div>
           </div>     
      </section>

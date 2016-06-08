@@ -13,6 +13,17 @@
 		
 		}
 		
+		public function getProdottiRandom($limit=3) {
+			
+			$query=$this->db->select('prodotti.*,categorieP.categoria')
+						->join('categorieP','categorieP.id=prodotti.id_categoria')
+						->order_by('id','RANDOM')
+						->limit($limit)
+						->get('prodotti');
+			
+			return $query->result();
+		}
+		
 		public function getProdottibyCat($cat) {
 			
 			$query=$this->db->select('*')

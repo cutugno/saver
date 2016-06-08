@@ -2,8 +2,18 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends MY_Controller {
+	
+	public function __construct() {
+		parent::__construct();
+		
+		$this->load->model('prodotti_model');
+	} 
 
 	public function index() {
+		
+		// imbarcazioni random
+		$prodotti=$this->prodotti_model->getProdottiRandom(3);
+		$data['prodotti']=$prodotti;
 		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
