@@ -13,7 +13,7 @@
 		
 		}
 		
-		public function getProdottiRandom($limit=3) {
+		public function getProdottiHome($limit=3) {
 			
 			$query=$this->db->select('prodotti.*,categorieP.categoria')
 						->join('categorieP','categorieP.id=prodotti.id_categoria')

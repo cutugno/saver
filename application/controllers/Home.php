@@ -7,13 +7,18 @@ class Home extends MY_Controller {
 		parent::__construct();
 		
 		$this->load->model('prodotti_model');
+		$this->load->model('news_model');
 	} 
 
 	public function index() {
 		
 		// imbarcazioni random
-		$prodotti=$this->prodotti_model->getProdottiRandom(3);
+		$prodotti=$this->prodotti_model->getProdottiHome(3);
 		$data['prodotti']=$prodotti;
+		
+		// ultime news (va in tutti i controller)
+		$news=$this->news_model->getNewsFooter(2);
+		$data['news']=$news;
 		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
@@ -29,7 +34,7 @@ class Home extends MY_Controller {
 		$this->load->view('common/body-slider',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('home');
-		$this->load->view('common/body-footer');
+		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('common/close');

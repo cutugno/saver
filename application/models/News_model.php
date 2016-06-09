@@ -44,6 +44,17 @@
 			
 		}	
 		
+		public function getNewsFooter($limit=2) {
+				
+			$query=$this->db->select('*')
+						->order_by('data_ins','DESC')
+						->limit($limit)
+						->get('news');
+						
+			return $query->result();			
+			
+		}
+		
 		public function getNewsFirstImage($idnews) { // tipologia allegati == 1
 			
 			$query=$this->db->select('*')

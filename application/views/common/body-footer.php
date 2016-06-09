@@ -29,16 +29,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          </div>
                          <div class="footer_teaser col-sm-4 col-md-4">
                               <h3>Ultime notizie</h3>
+                              <?php var_dump ($news); ?>
+                              <?php if (null!=$news) : ?>
                               <ul class="media-list">
-                                   <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t5.jpg)"></a> <a href="#" class="media-date">19<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Vivamus fringilla neque nibh, quis vestibulum lorem...</a></h5>
-                                        <p>Fugiat dapibus, tellus ac cursus commodo, ut fermentum...</p>
-                                   </li>
-                                   <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t4.jpg)"></a> <a href="#" class="media-date">18<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Maecenas convallis finibus semper. Sed sagittis, velit...</a></h5>
-                                        <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
-                                   </li>
+								     <?php foreach ($news as $key=>$val) :?>
+									 <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t5.jpg)"></a> <a href="#" class="media-date">19<span>FEB</span></a>
+										<h5 class="media-heading"><a href="#">Vivamus fringilla neque nibh, quis vestibulum lorem...</a></h5>
+										<p>Fugiat dapibus, tellus ac cursus commodo, ut fermentum...</p>
+								     </li>								     
+								     <?php endforeach ?>
                               </ul>
+                              <?php else : ?>
+                              Nessun elemento disponibile
+                              <?php endif ?>
                          </div>
 
                          <div class="footer_teaser col-sm-4 col-md-4" >
