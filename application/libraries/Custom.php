@@ -11,7 +11,7 @@ Class Custom {
 		
 		$CI =& get_instance();
 		
-		// ultime news (va in tutti i controller)
+		// ultime news 
 		$news=$CI->news_model->getNewsFooter($limit);
 		if (null!=$news) {
 			foreach ($news as $key=>$val) {
@@ -32,7 +32,7 @@ Class Custom {
 		
 		$CI =& get_instance();
 		
-		// ultime news (va in tutti i controller)
+		// news più lette
 		$news=$CI->news_model->getMostReadNews($limit);
 		
 		if (null!=$news) {

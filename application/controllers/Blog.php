@@ -32,15 +32,17 @@ class Blog extends MY_Controller {
 		
 		// elenco news
 		$news=$this->news_model->getNewsbyCat($cat,$start);
-		$news_count=count($news);
-		foreach ($news as $key=>$val) {
-			// aggiusto data per visualizzazione
-			$news[$key]->data_ins=convertDateTime($news[$key]->data_ins);
-			// aggiungo eventuali prima immagine a news
-			$allegati=$this->news_model->getNewsFirstImage($val->id);
-			$news[$key]->allegati=$allegati ? $allegati : "";
+		if (null!=$news) {
+			$news_count=count($news);
+			foreach ($news as $key=>$val) {
+				// aggiusto data per visualizzazione
+				$news[$key]->data_ins=convertDateTime($news[$key]->data_ins);
+				// aggiungo eventuali prima immagine a news
+				$allegati=$this->news_model->getNewsFirstImage($val->id);
+				$news[$key]->allegati=$allegati ? $allegati : "";
+			}
 		}
-		$data['news']=$news;
+		$data['news']=$news ? $news : "";
 		
 		// paginazione
 		$this->load->library('pagination');
