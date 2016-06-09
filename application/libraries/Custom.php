@@ -40,11 +40,10 @@ Class Custom {
 		
 		$CI->email->from($from, $from_name);
 		$CI->email->to($to);
-		$CI->email->subject($subject);
+		$CI->email->subject($subject." - ".$post['oggetto']);
 		$CI->email->message($message);
 		
 		if ($CI->email->send()){
-			log_message('debug', 'email inviata a indirizzo '.$to);
 			return true;
 		}
 		return false;
