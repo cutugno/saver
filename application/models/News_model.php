@@ -34,6 +34,15 @@
 			
 		}
 		
+		public function addNewsLettura($id) {
+			
+			$query=$this->db->set('letture', 'letture+1', FALSE)
+							->where('id', $id)
+							->update('news');
+			return $this->db->affected_rows();
+			
+		}
+		
 		public function getNewsAllegati($idnews) {
 			
 			$query=$this->db->select('*')
@@ -66,5 +75,19 @@
 			return $query->row();
 			
 		}	
+		
+		public function getMostReadNews($idcat,$limit=5) {
+			
+			$query=$this->db->select('news.*,categorieN.categoria')
+							->join('categorieN', 'categorieN.id=news.id_categoria')
+							->where('news.id_categoria',$idcat)
+							->order_by('news.letture','DESC')
+							->limit($limit)
+							//->get_compiled_select('news');
+							->get('news');
+			//return $query;
+			return $query->result();
+			
+		}
 	}
 	

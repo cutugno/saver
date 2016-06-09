@@ -68,6 +68,7 @@ class Blog extends MY_Controller {
 		$data['widget_categorie']=$this->load->view('widget/categorie',$data,TRUE);
 		
 		// widget più letti (passare risultato query 5 post più letti)
+		$data['newspiuletti']=$this->custom->getMostReadNews($cat,5);
 		$data['widget_letti']=$this->load->view('widget/letti',$data,TRUE);
 
 				
@@ -115,12 +116,16 @@ class Blog extends MY_Controller {
 		// formatto data
 		$single->data_ins=convertDateTime($single->data_ins);
 		$data['single'] = $single;	
-			
+		
+		// aggiorno contatore letture
+		$this->news_model->addNewsLettura($id);	
 			
 		// widget categorie (non serve probabilmente)
 		$data['widget_categorie']=$this->load->view('widget/categorie',$data,TRUE);
 		
+		
 		// widget più letti (passare risultato query 5 post più letti)
+		$data['newspiuletti']=$this->custom->getMostReadNews($cat,5);
 		$data['widget_letti']=$this->load->view('widget/letti',$data,TRUE);
 		
 		$this->load->view('common/head');
@@ -165,6 +170,7 @@ class Blog extends MY_Controller {
 		$data['widget_categorie']=$this->load->view('widget/categorie',$data,TRUE);
 		
 		// widget più letti (passare risultato query 5 post più letti)
+		$data['newspiuletti']=$this->custom->getMostReadNews($cat,5);
 		$data['widget_letti']=$this->load->view('widget/letti',$data,TRUE);		
 		
 		$this->load->view('common/head');

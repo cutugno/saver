@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                          <div class="footer_teaser col-sm-4 col-md-4" >
                               <h3>Social</h3>
-
+                              
                          </div>
                          
                     </div>
