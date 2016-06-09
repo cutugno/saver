@@ -3,15 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Imbarcazioni extends MY_Controller {
 	
-	public function __construct() {
-		parent::__construct();
-		
-		$this->load->model('prodotti_model');
-	}
-
 	public function index($cat) {
 		
 		if (empty($cat)) redirect(base_url());
+		
+		// ultime news (va in tutti i controller)
+		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
 		// categoria
 		$data['cat']=$this->prodotti_model->getCategoriaPbyId($cat);
@@ -34,7 +31,7 @@ class Imbarcazioni extends MY_Controller {
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('imbarcazioni',$data);
-		$this->load->view('common/body-footer');
+		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('common/close');
@@ -44,6 +41,9 @@ class Imbarcazioni extends MY_Controller {
 	public function single($id) {
 		
 		if (empty($id)) redirect('imbarcazioni');
+		
+		// ultime news (va in tutti i controller)
+		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
 		// dati prodotto
 		$prodotto=$this->prodotti_model->getProdottobyId($id);
@@ -69,7 +69,7 @@ class Imbarcazioni extends MY_Controller {
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('imbarcazioni-single',$data);
-		$this->load->view('common/body-footer');
+		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('scripts/imbarcazioni-single');

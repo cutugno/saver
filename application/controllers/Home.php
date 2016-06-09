@@ -3,13 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends MY_Controller {
 	
-	public function __construct() {
-		parent::__construct();
-		
-		$this->load->model('prodotti_model');
-		$this->load->model('news_model');
-	} 
-
 	public function index() {
 		
 		// imbarcazioni random
@@ -17,8 +10,7 @@ class Home extends MY_Controller {
 		$data['prodotti']=$prodotti;
 		
 		// ultime news (va in tutti i controller)
-		$news=$this->news_model->getNewsFooter(2);
-		$data['news']=$news;
+		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";

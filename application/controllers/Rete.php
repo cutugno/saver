@@ -2,14 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Rete extends MY_Controller {
-	
-	public function __construct() {
-		parent::__construct();
-		
-		$this->load->model('affiliati_model');
-	}
 
 	public function index() {
+		
+		// ultime news (va in tutti i controller)
+		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
@@ -30,7 +27,7 @@ class Rete extends MY_Controller {
 		$this->load->view('common/body-map');
 		$this->load->view('common/body-main-start');
 		$this->load->view('rete',$data);
-		$this->load->view('common/body-footer');
+		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('scripts/rete',$data);

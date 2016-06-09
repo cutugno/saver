@@ -46,7 +46,8 @@
 		
 		public function getNewsFooter($limit=2) {
 				
-			$query=$this->db->select('*')
+			$query=$this->db->select('news.*,categorieN.categoria')
+						->join('categorieN', 'categorieN.id=news.id_categoria')
 						->order_by('data_ins','DESC')
 						->limit($limit)
 						->get('news');

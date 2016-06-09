@@ -29,13 +29,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          </div>
                          <div class="footer_teaser col-sm-4 col-md-4">
                               <h3>Ultime notizie</h3>
-                              <?php var_dump ($news); ?>
-                              <?php if (null!=$news) : ?>
+                              <?php // var_dump ($news); ?>
+                              <?php if (null!=$newsfooter) : ?>
                               <ul class="media-list">
-								     <?php foreach ($news as $key=>$val) :?>
-									 <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t5.jpg)"></a> <a href="#" class="media-date">19<span>FEB</span></a>
-										<h5 class="media-heading"><a href="#">Vivamus fringilla neque nibh, quis vestibulum lorem...</a></h5>
-										<p>Fugiat dapibus, tellus ac cursus commodo, ut fermentum...</p>
+								     <?php foreach ($newsfooter as $key=>$val) :?>
+									 <li class="media"> <a href="<?php echo site_url(strtolower($val->categoria.'/'.$val->slug.'/'.$val->id)); ?>" class="media-photo" style="background-image:url(<?php echo base_url($val->allegati->url); ?>)"></a> <a href="#" class="media-date"><?php echo $val->data_ins['giorno']; ?><span><?php echo $val->data_ins['mese']; ?></span></a>
+										<h5 class="media-heading"><a href="<?php echo site_url(strtolower($val->categoria.'/'.$val->slug.'/'.$val->id)); ?>"><?php echo $val->titolo; ?></a></h5>
+										<p><?php echo word_limiter($val->testo,10); ?></p>
 								     </li>								     
 								     <?php endforeach ?>
                               </ul>

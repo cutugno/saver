@@ -5,6 +5,9 @@ class Contatti extends MY_Controller {
 
 	public function index() {
 		
+		// ultime news (va in tutti i controller)
+		$data['newsfooter']=$this->custom->getNewsFooter(2);
+		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
 		
@@ -20,7 +23,7 @@ class Contatti extends MY_Controller {
 		$this->load->view('common/body-map',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('contatti');
-		$this->load->view('common/body-footer');
+		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('scripts/contatti');

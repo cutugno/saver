@@ -3,13 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Blog extends MY_Controller {
 	
-	public function __construct() {
-		parent::__construct();
-		
-		$this->load->model('news_model');
-	}
-
 	public function index($cat,$start=0) {
+		
+		// ultime news (va in tutti i controller)
+		$data['newsfooter']=$this->custom->getNewsFooter(2);
 				
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
@@ -78,7 +75,7 @@ class Blog extends MY_Controller {
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('blog',$data);
-		$this->load->view('common/body-footer');
+		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('common/close');
@@ -88,6 +85,9 @@ class Blog extends MY_Controller {
 	public function single($cat,$id) {
 		
 		if (empty($id)) redirect('blog');
+		
+		// ultime news (va in tutti i controller)
+		$data['newsfooter']=$this->custom->getNewsFooter(2);
 
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
@@ -127,7 +127,7 @@ class Blog extends MY_Controller {
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('blog-single',$data);
-		$this->load->view('common/body-footer');
+		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('scripts/blog-single');
@@ -139,6 +139,9 @@ class Blog extends MY_Controller {
 		/*
 		
 		if (empty($categoria)) redirect('blog');
+		
+		// ultime news (va in tutti i controller)
+		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
 		// menu active
 		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
@@ -168,7 +171,7 @@ class Blog extends MY_Controller {
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('blog-category',$data);
-		$this->load->view('common/body-footer');
+		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
 		$this->load->view('common/close');
