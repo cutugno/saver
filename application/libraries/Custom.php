@@ -26,5 +26,26 @@ Class Custom {
 		
 	}
 	
+	public function sendMail($post) {
+		
+		$CI =& get_instance();
+		$CI->load->library('email');
+		$CI->config->load('email');
+					
+		$message=$post['messaggio'];		
+		$from = $post['email'];
+		$from_name = $post['nome'];
+		$to=CONTACTDEST;
+		$subject=CONTACTSUBJECT;
+		
+		$CI->email->from($from, $from_name);
+		$CI->email->to($to);
+		$CI->email->subject($subject);
+		$CI->email->message($message);
+		
+		return $CI->email->send();
+		
+	}
+	
 	
 }

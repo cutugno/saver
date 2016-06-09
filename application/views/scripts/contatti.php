@@ -87,32 +87,28 @@ $(document).ready(function() {
         }
 
         //everything looks good! proceed...
-        if(proceed) 
-        {
+        if (proceed) {
 			notice.removeClass().html("Invio in corso...").addClass("alert alert-info").fadeIn(400);
-            //data to be sent to server
-            post_data = {'userName':user_name, 'userEmail':user_email, 'userSubject':user_subject, 'userMessage':user_message};
+            // data to be sent to server
+            post_data = $("#contact_form").serialize();
             
             //Ajax post data to server
-            $.post('contact.php', post_data, function(response){  
-                
+            $.post('<?php echo site_url('contatti/sendmail'); ?>', post_data, function(response){                  
                 //load json data from server and output message     
-                if(response.type == 'error')
-                {
-                    output = response.text;
-		notice.removeClass().html(output).addClass("alert alert-warning").fadeIn(400);
-                }else{
-                
-                    output = response.text;
-                    
+                if(response) {
+					output="Mail inviata. Grazie per averci contattato.";                    
                     //reset values in all input fields
                     $('#contact_form input').val(''); 
                     $('#contact_form textarea').val(''); 
-		notice.removeClass().html(output).addClass("alert alert-success").fadeIn(400);
-                }
-                
-            }, 'json');
-            
+					notice.removeClass().html(output).addClass("alert alert-success").fadeIn(400);
+                }else{                
+					output="Errore durante l'invio della comunicazione. E' pregato di riprovare.";
+                    //reset values in all input fields
+                    $('#contact_form input').val(''); 
+                    $('#contact_form textarea').val(''); 
+					notice.removeClass().html(output).addClass("alert alert-danger").fadeIn(400);
+                }               
+            });            
         }
     });
     
