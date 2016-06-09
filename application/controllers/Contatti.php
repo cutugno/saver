@@ -35,8 +35,7 @@ class Contatti extends MY_Controller {
 			
 		if (null!=$this->input->post()) {
 			
-			var_dump ($this->custom->sendMail($this->input->post()));
-			//echo "ciao";
+			echo $this->custom->sendMail($this->input->post());
 			
 		}
 		

@@ -35,15 +35,19 @@ Class Custom {
 		$message=$post['messaggio'];		
 		$from = $post['email'];
 		$from_name = $post['nome'];
-		$to=CONTACTDEST;
-		$subject=CONTACTSUBJECT;
+		$to=$CI->config->item('contactdest');
+		$subject=$CI->config->item('contactsubject');
 		
 		$CI->email->from($from, $from_name);
 		$CI->email->to($to);
 		$CI->email->subject($subject);
 		$CI->email->message($message);
 		
-		return $CI->email->send();
+		if ($CI->email->send()){
+			log_message('debug', 'email inviata a indirizzo '.$to);
+			return true;
+		}
+		return false;
 		
 	}
 	
