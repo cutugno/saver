@@ -140,8 +140,9 @@ class Blog extends MY_Controller {
 		
 	}
 	
-	public function category($categoria) { // non serve per ora
-		/*
+	/* non serve per ora
+	 
+	public function category($categoria) {
 		
 		if (empty($categoria)) redirect('blog');
 		
@@ -182,7 +183,8 @@ class Blog extends MY_Controller {
 		$this->load->view('common/scripts');
 		$this->load->view('common/close');
 		
-		*/
 	}
+	
+	*/
 	
 }
