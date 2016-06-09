@@ -59,7 +59,7 @@ class Blog extends MY_Controller {
 		$config['cur_tag_close'] = '</a></li>';
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
-		$config["num_links"] = round( $config["total_rows"] / $config["per_page"] );
+		$config["num_links"] = round($config["total_rows"] / $config["per_page"]);
 		
 		$this->pagination->initialize($config);
 		$data['pages'] = $this->pagination->create_links();
