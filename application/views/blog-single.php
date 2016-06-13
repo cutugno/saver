@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               </div>
                                  <?php for ($x=0;$x<count($single->allegati);$x++) : ?>
 									<?php if ($single->allegati[$x]->tipologia==2) : ?>
-									  <i class="fa fa-download"> <a href="<?php echo base_url($single->allegati[$x]->url); ?>" target="_blank">Scarica <?php echo $single->allegati[$x]->alt; ?></a> </i>									  
+									  <i class="fa fa-download"></i> <a href="<?php echo base_url($single->allegati[$x]->url); ?>" target="_blank">Scarica <?php echo $single->allegati[$x]->alt; ?></a>								  
 									<?php endif ?>
 								  <?php endfor ?>
                               <?php endif ?>
