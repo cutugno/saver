@@ -6991,7 +6991,7 @@ header .container {
   position: relative;
 }
 .full_page_photo.slider_wrapper {
-  height: 480px;
+  height: 390px;
 }
 .full_page_photo section.call_to_action {
   margin: 0;
@@ -7079,7 +7079,7 @@ header .container {
 }
 section.call_to_action {
   text-align: center;
-  padding: 35px 0 45px 0;
+  padding: 20px 0 45px 0;
 }
 section.call_to_action h3 {
   font-weight: 300;

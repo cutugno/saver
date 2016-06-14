@@ -13,6 +13,9 @@ class Prodotti extends MY_Controller {
 		// categoria
 		$data['cat']=$this->prodotti_model->getCategoriaPbyId($cat);
 		
+		// slider
+		$data['slider_img']=[$data['cat']->img];
+		
 		// elenco prodotti
 		$prodotti=$this->prodotti_model->getProdottibyCat($cat);
 		$data['prodotti']=$prodotti;
@@ -23,12 +26,10 @@ class Prodotti extends MY_Controller {
 		// menu active
 		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['prodottiactive']=$data['reteactive']=$data['contattiactive']="";
 		$data['prodottiactive']=" active";
-		
-		
-		
-		
+						
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
+		$this->load->view('common/body-slider',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('prodotti',$data);
 		$this->load->view('common/body-footer',$data);

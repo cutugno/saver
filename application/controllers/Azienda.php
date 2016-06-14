@@ -20,7 +20,7 @@ class Azienda extends MY_Controller {
 		
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
-		$this->load->view('common/body-slider');
+		$this->load->view('common/body-slider',$data);
 		$this->load->view('common/body-main-start');
 		$this->load->view('azienda');
 		$this->load->view('common/body-footer',$data);
