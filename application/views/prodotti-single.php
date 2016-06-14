@@ -68,27 +68,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				  </div>
 				  <div class="col-xs-12">
 					  <!--ita -->
-					  <div class="row carcont" id="car_it">		
-						  <div class="col-md-4">						  
-							  <p class="lead">Caratteristiche tecniche</p>
-								 <?php foreach ($prodotto->car_it->ct as $key=>$val) : ?>
-									<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
-								<?php endforeach ?>
-							  </p>
-						  </div>
-						  <div class="col-md-4">
-							  <p class="lead">Dotazione di serie</p>
-								 <?php 
-									echo $prodotto->car_it->dot;
-								 ?> 
-							  </p>
-						  </div>
-						  <div class="col-md-4">
-							  <p class="lead">Dotazione extra</p>
-								 <?php 
-									echo $prodotto->car_it->extra;
-								 ?>
-							  </p>
+					  <div class="row carcont" id="car_it">	
+						  <div class="col-xs-12">
+							  <?php $x=0; ?>
+							  <?php foreach ($prodotto->car_it as $key=>$val) : ?>
+							  <?php $x++;
+									if ($x==1) echo "<div class=\"row\">";
+							  ?>
+							  <div class="col-md-4 carbox">						  
+								  <p class="lead"><?php echo $key; ?></p>
+								  <?php if (is_object($val)) : ?>
+									 <?php foreach ($val as $ckey=>$ct) : ?>
+										<?php echo "<strong>$ckey</strong>".": $ct<br>"; ?>
+									 <?php endforeach ?>
+								  <?php else : ?>
+								  <p><?php echo $val; ?></p>
+								  <?php endif ?>
+							  </div>
+							  <?php if ($x==3) {
+										$x=0;
+										echo "</div><div class=\"spacer\"></div>";
+									}
+							  ?>
+							  <?php endforeach ?>
 						  </div>
 					   </div>
 					   <!--eng -->
