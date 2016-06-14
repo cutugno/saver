@@ -13,7 +13,7 @@ class Blog extends MY_Controller {
 		
 				
 		// menu active (v. anche switch sotto)
-		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['prodottiactive']=$data['reteactive']=$data['contattiactive']="";
 			
 		// specifiche pagina per differenziare notizie e rassegna stampa
 		switch ($cat) {
@@ -96,7 +96,7 @@ class Blog extends MY_Controller {
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
 		
 		// menu active
-		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['prodottiactive']=$data['reteactive']=$data['contattiactive']="";
 
 		// menu active e varie
 		switch ($cat) {
@@ -152,7 +152,7 @@ class Blog extends MY_Controller {
 		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
 		// menu active
-		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['prodottiactive']=$data['reteactive']=$data['contattiactive']="";
 		
 		$data['blogactive']=" class='active'";
 			

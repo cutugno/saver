@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Imbarcazioni extends MY_Controller {
+class Prodotti extends MY_Controller {
 	
 	public function index($cat) {
 		
@@ -13,7 +13,7 @@ class Imbarcazioni extends MY_Controller {
 		// categoria
 		$data['cat']=$this->prodotti_model->getCategoriaPbyId($cat);
 		
-		// elenco imbarcazioni
+		// elenco prodotti
 		$prodotti=$this->prodotti_model->getProdottibyCat($cat);
 		$data['prodotti']=$prodotti;
 		
@@ -21,8 +21,8 @@ class Imbarcazioni extends MY_Controller {
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
 		
 		// menu active
-		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
-		$data['imbarcazioniactive']=" active";
+		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['prodottiactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['prodottiactive']=" active";
 		
 		
 		
@@ -30,7 +30,7 @@ class Imbarcazioni extends MY_Controller {
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-main-start');
-		$this->load->view('imbarcazioni',$data);
+		$this->load->view('prodotti',$data);
 		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
@@ -40,7 +40,7 @@ class Imbarcazioni extends MY_Controller {
 	
 	public function single($id) {
 		
-		if (empty($id)) redirect('imbarcazioni');
+		if (empty($id)) redirect('prodotti');
 		
 		// ultime news (va in tutti i controller)
 		$data['newsfooter']=$this->custom->getNewsFooter(2);
@@ -59,8 +59,8 @@ class Imbarcazioni extends MY_Controller {
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
         
 		// menu active
-		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['imbarcazioniactive']=$data['reteactive']=$data['contattiactive']="";
-		$data['imbarcazioniactive']=" active";
+		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['prodottiactive']=$data['reteactive']=$data['contattiactive']="";
+		$data['prodottiactive']=" active";
 		
 		// dati imbarcazione
 		$data['title']="Modello qualsiasi";
@@ -68,11 +68,11 @@ class Imbarcazioni extends MY_Controller {
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-main-start');
-		$this->load->view('imbarcazioni-single',$data);
+		$this->load->view('prodotti-single',$data);
 		$this->load->view('common/body-footer',$data);
 		$this->load->view('common/body-main-close');
 		$this->load->view('common/scripts');
-		$this->load->view('scripts/imbarcazioni-single');
+		$this->load->view('scripts/prodotti-single');
 		$this->load->view('common/close');
 		
 	}

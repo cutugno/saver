@@ -15,7 +15,7 @@ function init() {
 	var mapElement = document.getElementById('map');
 	var map = new google.maps.Map(mapElement, mapOptions);
 	
-	var contentString="<strong>Saver Imbarcazioni</strong><br>Viale Regione Siciliana 32";
+	var contentString="<strong>Saver prodotti</strong><br>Viale Regione Siciliana 32";
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString
 	});
@@ -23,7 +23,7 @@ function init() {
 	var marker = new google.maps.Marker({
 		position: myLatlng,
 		map: map,
-		title: 'Saver Imbarcazioni'
+		title: 'Saver prodotti'
 	});
 	marker.addListener('click', function() {
 		infowindow.open(map, marker);

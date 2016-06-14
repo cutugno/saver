@@ -15,13 +15,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <ul class="nav pull-right navbar-nav">
                          <li<?php echo $notizieactive; ?>><a href="<?php echo site_url('notizie'); ?>"><?php echo $this->lang->line('menu_1'); ?></a></li>
                          <li<?php echo $aziendaactive; ?>><a href="<?php echo site_url('azienda'); ?>"><?php echo $this->lang->line('menu_2'); ?></a></li>
-                          <li class="dropdown<?php echo $imbarcazioniactive; ?>"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $this->lang->line('menu_3'); ?><span class="caret"></span></a>
+                          <li class="dropdown<?php echo $prodottiactive; ?>"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $this->lang->line('menu_3'); ?><span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-open'); ?>"><?php echo $this->lang->line('menu_31'); ?></a></li>
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-walk-around'); ?>"><?php echo $this->lang->line('menu_32'); ?></a></li>
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-fisher'); ?>"><?php echo $this->lang->line('menu_33'); ?></a></li>
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-cabin'); ?>"><?php echo $this->lang->line('menu_34'); ?></a></li>
-                                   <li><a href="<?php echo site_url('imbarcazioni/linea-gommoni-mg'); ?>"><?php echo $this->lang->line('menu_35'); ?></a></li>
+                                   <li><a href="<?php echo site_url('prodotti/linea-open'); ?>"><?php echo $this->lang->line('menu_31'); ?></a></li>
+                                   <li><a href="<?php echo site_url('prodotti/linea-walk-around'); ?>"><?php echo $this->lang->line('menu_32'); ?></a></li>
+                                   <li><a href="<?php echo site_url('prodotti/linea-fisher'); ?>"><?php echo $this->lang->line('menu_33'); ?></a></li>
+                                   <li><a href="<?php echo site_url('prodotti/linea-cabin'); ?>"><?php echo $this->lang->line('menu_34'); ?></a></li>
+                                   <li><a href="<?php echo site_url('prodotti/linea-gommoni-mg'); ?>"><?php echo $this->lang->line('menu_35'); ?></a></li>
                               </ul>
                          </li>
                          <li<?php echo $reteactive; ?>><a href="<?php echo site_url('rete-vendita'); ?>"><?php echo $this->lang->line('menu_4'); ?></a></li>

@@ -5,10 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section class="hgroup">
           <div class="container">
                <h1>Linea <?php echo $cat->categoria; ?></h1>
-               <h2>Breve descrizione della categoria imbarcazioni</h2>
+               <h2>Breve descrizione della categoria prodotti</h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li class="active">Imbarcazioni > Linea <?php echo $cat->categoria; ?></li>
+                    <li class="active">prodotti > Linea <?php echo $cat->categoria; ?></li>
                </ul>
           </div>
      </section>

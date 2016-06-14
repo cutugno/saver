@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <h2><?php echo $prodotto->sottotitolo; ?></h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li><a href="<?php echo site_url($this->uri->segment(1)."/".$this->uri->segment(2)); ?>">Imbarcazioni > Linea <?php echo $prodotto->categoria; ?></a> </li>
+                    <li><a href="<?php echo site_url($this->uri->segment(1)."/".$this->uri->segment(2)); ?>">Prodotti > Linea <?php echo $prodotto->categoria; ?></a> </li>
                     <li class="active"><?php echo $prodotto->modello; ?></li>
                </ul>
           </div>
