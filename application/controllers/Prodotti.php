@@ -48,8 +48,15 @@ class Prodotti extends MY_Controller {
 		
 		// dati prodotto
 		$prodotto=$this->prodotti_model->getProdottobyId($id);
+		// prendo descr solo della lingua attuale
+		$prodotto->descr=json_decode($prodotto->descr);
+		$lang=substr($this->session->lang,0,2);
+		$prodotto->descr=$prodotto->descr->$lang;
+		
 		$prodotto->car_it=json_decode($prodotto->car_it);
 		$prodotto->car_en=json_decode($prodotto->car_en);
+		$prodotto->car_fr=json_decode($prodotto->car_fr);
+		$prodotto->car_es=json_decode($prodotto->car_es);
 		$data['prodotto']=$prodotto;
 		
 		// dati media prodotto
