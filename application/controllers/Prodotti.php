@@ -16,8 +16,15 @@ class Prodotti extends MY_Controller {
 		// slider
 		$data['slider_img']=[$data['cat']->img];
 		
+		$lang=substr($this->session->lang,0,2);
+		
 		// elenco prodotti
 		$prodotti=$this->prodotti_model->getProdottibyCat($cat);
+		// gestione sottotitolo per lingua
+		foreach ($prodotti as $key=>$val) {
+			$sottotitolo=json_decode($val->sottotitolo);
+			$prodotti[$key]->sottotitolo=$sottotitolo->$lang;
+		}
 		$data['prodotti']=$prodotti;
 		
 		// menu lingua
@@ -48,15 +55,21 @@ class Prodotti extends MY_Controller {
 		
 		// dati prodotto
 		$prodotto=$this->prodotti_model->getProdottobyId($id);
-		// prendo descr solo della lingua attuale
-		$prodotto->descr=json_decode($prodotto->descr);
-		$lang=substr($this->session->lang,0,2);
-		$prodotto->descr=$prodotto->descr->$lang;
 		
+		$lang=substr($this->session->lang,0,2);
+		
+		// prendo sottotitolo solo della lingua attuale $lang
+		$prodotto->sottotitolo=json_decode($prodotto->sottotitolo);
+		$prodotto->sottotitolo=$prodotto->sottotitolo->$lang;
+		// prendo descr solo della lingua attuale $lang
+		$prodotto->descr=json_decode($prodotto->descr);		
+		$prodotto->descr=$prodotto->descr->$lang;
+		// caratteristiche
 		$prodotto->car_it=json_decode($prodotto->car_it);
 		$prodotto->car_en=json_decode($prodotto->car_en);
 		$prodotto->car_fr=json_decode($prodotto->car_fr);
 		$prodotto->car_es=json_decode($prodotto->car_es);
+		
 		$data['prodotto']=$prodotto;
 		
 		// dati media prodotto
