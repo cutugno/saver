@@ -67,105 +67,132 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					  </h2> 
 				  </div>
 				  <div class="col-xs-12">
-					  <!--ita -->
-					  <div class="row carcont" id="car_it">	
-						  <div class="col-xs-12">
-							  <?php $x=0; ?>
-							  <?php foreach ($prodotto->car_it as $key=>$val) : ?>
-							  <?php $x++;
-									if ($x==1) echo "<div class=\"row\">";
-							  ?>
-							  <div class="col-md-4 carbox">						  
-								  <p class="lead"><?php echo $key; ?></p>
-								  <?php if (is_object($val)) : ?>
-									 <?php foreach ($val as $ckey=>$ct) : ?>
-										<?php echo "<strong>$ckey</strong>".": $ct<br>"; ?>
-									 <?php endforeach ?>
-								  <?php else : ?>
-								  <p><?php echo $val; ?></p>
-								  <?php endif ?>
-							  </div>
-							  <?php if ($x==3) {
-										$x=0;
-										echo "</div><div class=\"spacer\"></div>";
-									}
-							  ?>
-							  <?php endforeach ?>
-						  </div>
-					   </div>
-					   <!--eng -->
-					   <div class="row carcont" id="car_en" style="display:none">		
-						  <div class="col-md-4">						  
-							  <p class="lead">Caratteristiche tecniche</p>
-								 <?php foreach ($prodotto->car_en->ct as $key=>$val) : ?>
-									<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
-								<?php endforeach ?>
-							  </p>
-						  </div>
-						  <div class="col-md-4">
-							  <p class="lead">Dotazione di serie</p>
-								 <?php 
-									echo $prodotto->car_en->dot;
-								 ?> 
-							  </p>
-						  </div>
-						  <div class="col-md-4">
-							  <p class="lead">Dotazione extra</p>
-								 <?php 
-									echo $prodotto->car_en->extra;
-								 ?>
-							  </p>
-						  </div>
-					   </div>
-					   <!-- fra -->
-					   <div class="row carcont" id="car_fr" style="display:none">		
-						  <div class="col-md-4">						  
-							  <p class="lead">Caratteristiche tecniche</p>
-								 <?php foreach ($prodotto->car_fr->ct as $key=>$val) : ?>
-									<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
-								<?php endforeach ?>
-							  </p>
-						  </div>
-						  <div class="col-md-4">
-							  <p class="lead">Dotazione di serie</p>
-								 <?php 
-									echo $prodotto->car_fr->dot;
-								 ?> 
-							  </p>
-						  </div>
-						  <div class="col-md-4">
-							  <p class="lead">Dotazione extra</p>
-								 <?php 
-									echo $prodotto->car_fr->extra;
-								 ?>
-							  </p>
-						  </div>
-					   </div>
-					   <!-- spa -->
-					   <div class="row carcont" id="car_es" style="display:none">		
-						  <div class="col-md-4">						  
-							  <p class="lead">Caratteristiche tecniche</p>
-								 <?php foreach ($prodotto->car_es->ct as $key=>$val) : ?>
-									<?php echo "<strong>$key</strong>".": ".$val."<br>"; ?>
-								<?php endforeach ?>
-							  </p>
-						  </div>
-						  <div class="col-md-4">
-							  <p class="lead">Dotazione di serie</p>
-								 <?php 
-									echo $prodotto->car_es->dot;
-								 ?> 
-							  </p>
-						  </div>
-						  <div class="col-md-4">
-							  <p class="lead">Dotazione extra</p>
-								 <?php 
-									echo $prodotto->car_es->extra;
-								 ?>
-							  </p>
-						  </div>
-					   </div>
-				   </div>
+					
+					<div class="row carcont" id="car_it">
+						<div class="col-xs-12">
+							 <?php $x=1; ?>
+							 <?php foreach ($prodotto->car_it as $key=>$val) : ?>
+								<?php if ($x==1) : ?>
+									<div class="row">
+								<?php endif ?>
+								<div class="col-xs-12 col-md-4 carbox">
+									<p class="lead"><?php echo $key; ?></p>
+									<?php if (is_object($val)) : ?>
+										<?php foreach ($val as $ckey=>$ct) : ?>
+											<strong><?php echo $ckey; ?></strong>: <?php echo $ct; ?><br>
+										<?php endforeach ?>
+										<?php else : ?>
+											<p><?php echo $val; ?></p>
+									<?php endif ?>
+								</div>
+								<?php if ($x==3) : ?>
+									</div>
+									<div class="spacer"></div>
+									<?php $x=1; ?>
+								<?php else : ?>
+									<?php $x++; ?>
+								<?php endif ?>
+							 <?php endforeach ?>
+							 <?php if ($x!=1) : ?>
+								</div>
+							<?php endif ?>
+						</div>
+					</div>
+					
+					<div class="row carcont" id="car_en" style="display:none">
+						<div class="col-xs-12">
+							 <?php $x=1; ?>
+							 <?php foreach ($prodotto->car_en as $key=>$val) : ?>
+								<?php if ($x==1) : ?>
+									<div class="row">
+								<?php endif ?>
+								<div class="col-xs-12 col-md-4 carbox">
+									<p class="lead"><?php echo $key; ?></p>
+									<?php if (is_object($val)) : ?>
+										<?php foreach ($val as $ckey=>$ct) : ?>
+											<strong><?php echo $ckey; ?></strong>: <?php echo $ct; ?><br>
+										<?php endforeach ?>
+										<?php else : ?>
+											<p><?php echo $val; ?></p>
+									<?php endif ?>
+								</div>
+								<?php if ($x==3) : ?>
+									</div>
+									<div class="spacer"></div>
+									<?php $x=1; ?>
+								<?php else : ?>
+									<?php $x++; ?>
+								<?php endif ?>
+							 <?php endforeach ?>
+							 <?php if ($x!=1) : ?>
+								</div>
+							<?php endif ?>
+						</div>
+					</div>
+					
+					<div class="row carcont" id="car_fr" style="display:none">
+						<div class="col-xs-12">
+							 <?php $x=1; ?>
+							 <?php foreach ($prodotto->car_fr as $key=>$val) : ?>
+								<?php if ($x==1) : ?>
+									<div class="row">
+								<?php endif ?>
+								<div class="col-xs-12 col-md-4 carbox">
+									<p class="lead"><?php echo $key; ?></p>
+									<?php if (is_object($val)) : ?>
+										<?php foreach ($val as $ckey=>$ct) : ?>
+											<strong><?php echo $ckey; ?></strong>: <?php echo $ct; ?><br>
+										<?php endforeach ?>
+										<?php else : ?>
+											<p><?php echo $val; ?></p>
+									<?php endif ?>
+								</div>
+								<?php if ($x==3) : ?>
+									</div>
+									<div class="spacer"></div>
+									<?php $x=1; ?>
+								<?php else : ?>
+									<?php $x++; ?>
+								<?php endif ?>
+							 <?php endforeach ?>
+							 <?php if ($x!=1) : ?>
+								</div>
+							<?php endif ?>
+						</div>
+					</div>
+					
+					<div class="row carcont" id="car_es" style="display:none">
+						<div class="col-xs-12">
+							 <?php $x=1; ?>
+							 <?php foreach ($prodotto->car_es as $key=>$val) : ?>
+								<?php if ($x==1) : ?>
+									<div class="row">
+								<?php endif ?>
+								<div class="col-xs-12 col-md-4 carbox">
+									<p class="lead"><?php echo $key; ?></p>
+									<?php if (is_object($val)) : ?>
+										<?php foreach ($val as $ckey=>$ct) : ?>
+											<strong><?php echo $ckey; ?></strong>: <?php echo $ct; ?><br>
+										<?php endforeach ?>
+										<?php else : ?>
+											<p><?php echo $val; ?></p>
+									<?php endif ?>
+								</div>
+								<?php if ($x==3) : ?>
+									</div>
+									<div class="spacer"></div>
+									<?php $x=1; ?>
+								<?php else : ?>
+									<?php $x++; ?>
+								<?php endif ?>
+							 <?php endforeach ?>
+							 <?php if ($x!=1) : ?>
+								</div>
+							<?php endif ?>
+						</div>
+					</div>
+					
+				  </div>
 			   </div>
   
                <div class="row areasensitive hidden-xs">
