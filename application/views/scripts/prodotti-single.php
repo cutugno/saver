@@ -19,14 +19,17 @@
 	
 	$(document).ready(function(){
 	  $("#carousel1").owlCarousel({		
-		loop:false,
+		loop:true,
+		autoplay: true,
+		autoplayTimeout: 5000,
+		autoplayHoverPause: true,
 		center:true,
 		video:true,
 		lazyLoad:true,
 		items:1,
 		URLhashListener:true,
-		animateOut: 'bounceOutRight',
-		animateIn: 'bounceInLeft',
+		animateOut: 'bounceOutLeft',
+		animateIn: 'bounceInRight',
 	  });
 	  $("#carousel2").owlCarousel({
 		autoplay: true,

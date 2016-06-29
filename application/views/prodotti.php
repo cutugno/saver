@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                          <div class="portfolio_item"> 
 							  <a href="<?php echo site_url(uri_string()."/".strtolower(url_title($val->modello))."/".$val->id); ?>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
-								  <figure style="background-image:url(<?php echo base_url($val->img); ?>)">
+								  <figure style="background-image:url(<?php echo base_url("images/prodotti/".$val->img); ?>)">
 									   <svg viewBox="0 0 180 320" preserveAspectRatio="none">
 											<path d="M 180,0 0,0 0,0 180,0 z"/>
 									   </svg>

@@ -74,6 +74,7 @@ class Prodotti extends MY_Controller {
 		
 		// dati media prodotto
 		$media=$this->prodotti_model->getMediaProdottobyId($id);
+		shuffle($media);
 		$data['media']=$media;		
 		
 		// menu lingua

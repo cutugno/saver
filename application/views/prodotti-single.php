@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									  </div>						  
 								  </div>
 								  <?php else: ?>								  	
-								  <div data-hash="<?php echo $key; ?>"><img src="<?php echo base_url($val->url); ?>" alt=""></div>
+								  <div data-hash="<?php echo $key; ?>"><img src="<?php echo base_url("images/prodotti/".$val->url); ?>" alt=""></div>
 								  <?php endif ?>
 							  <?php endforeach ?>	
 							</div>
@@ -40,10 +40,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="col-xs-12">
 								  <div id="carousel2">	
 									  <?php foreach ($media as $key=>$val) : ?>
-									  <div><a href="#<?php echo $key; ?>"><img src="<?php echo $val->tipologia==1 ? base_url($val->url_tn) : base_url('images/video.jpg'); ?>" alt=""></a></div>				  
-									 <?php endforeach ?>			  					 
-								  </div>		
-							</div>
+									  <div><a href="#<?php echo $key; ?>"><img src="<?php echo $val->tipologia==1 ? base_url("images/prodotti/".$val->url_tn) : base_url('images/video.jpg'); ?>" alt=""></a></div>	<?php endforeach ?>			  					 
+								  </div>	
+								  <?php if (NULL!=$prodotto->download_url) : ?>
+								  <ul class="pager">
+									<li class="previous"><a href="<?php echo site_url("files/".$prodotto->download_url); ?>" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> Scarica materiale</a></li>
+								  </ul>	
+								  <?php endif ?>
+							</div>							
 						</div>	
 											 							  
                     </div>
@@ -52,9 +56,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						
                               <h2 class="section_header">Descrizione</h2>
                               <p><?php echo $prodotto->descr; ?></p>
-						</article>
+						</article>						
                     </div>
-               </div>
+               </div> 
                <div class="row caratteristiche" style="margin-top:20px">
 				  <div class="col-xs-12">
 					  <h2 class="section_header">Caratteristiche
