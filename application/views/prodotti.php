@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <h2>Breve descrizione della categoria prodotti</h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li class="active">prodotti > Linea <?php echo $cat->categoria; ?></li>
+                    <li class="active">Prodotti > Linea <?php echo $cat->categoria; ?></li>
                </ul>
           </div>
      </section>
