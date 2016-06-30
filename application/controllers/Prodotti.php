@@ -47,14 +47,17 @@ class Prodotti extends MY_Controller {
 	}
 	
 	public function single($id) {
-		
-		if (empty($id)) redirect('prodotti');
-		
+				
 		// ultime news (va in tutti i controller)
 		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
 		// dati prodotto
 		$prodotto=$this->prodotti_model->getProdottobyId($id);
+		if (empty($prodotto)) redirect('home');
+		// controllo slug categoria e modello corretto
+		$cat_slug="linea-".strtolower($prodotto->categoria);
+		$prod_slug=strtolower(url_title($prodotto->modello));
+		if (($this->uri->segment(2)!=$cat_slug) || ($this->uri->segment(3)!=$prod_slug)) redirect('prodotti/'.$cat_slug.'/'.$prod_slug.'/'.$id);		
 		
 		$lang=substr($this->session->lang,0,2);
 		

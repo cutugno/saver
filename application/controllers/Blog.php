@@ -30,11 +30,18 @@ class Blog extends MY_Controller {
 				break;
 		}		
 		
+		$lang=substr($this->session->lang,0,2);
+		
 		// elenco news
 		$news=$this->news_model->getNewsbyCat($cat,$start);
 		if (null!=$news) {
 			$news_count=count($news);
 			foreach ($news as $key=>$val) {
+				// prendo titolo e testo solo della lingua attuale
+				$titolo=json_decode($val->titolo);
+				$news[$key]->titolo=$titolo->$lang;
+				$testo=json_decode($val->testo);
+				$news[$key]->testo=$testo->$lang;
 				// aggiusto data per visualizzazione
 				$news[$key]->data_ins=convertDateTime($news[$key]->data_ins);
 				// aggiungo eventuali prima immagine a news
@@ -85,10 +92,12 @@ class Blog extends MY_Controller {
 		
 	}
 	
-	public function single($cat,$id) {
-		
+	public function single($cat,$id,$titolo) {
+			
 		if (empty($id)) redirect('blog');
-		
+				
+		$lang=substr($this->session->lang,0,2);
+				
 		// ultime news (va in tutti i controller)
 		$data['newsfooter']=$this->custom->getNewsFooter(2);
 
@@ -112,6 +121,13 @@ class Blog extends MY_Controller {
 		
 		// dati singolo articolo
 		$single=$this->news_model->getNewsbyId($id);
+		if (empty($single)) redirect ('home'); // se l'id news non c'è in db
+		if ($titolo!=$single->slug) redirect(strtolower(url_title($data['titolocat'])."/".$single->slug."/".$id)); // se slug è sbagliato redirect su url corretto
+		// prendo titolo e testo solo della lingua attuale
+		$titolo=json_decode($single->titolo);
+		$single->titolo=$titolo->$lang;
+		$testo=json_decode($single->testo);
+		$single->testo=$testo->$lang;
 		// aggiungo allegati
 		$allegati=$this->news_model->getNewsAllegati($id);
 		$single->allegati=$allegati ? $allegati : "";
@@ -121,7 +137,7 @@ class Blog extends MY_Controller {
 		
 		// aggiorno contatore letture
 		$this->news_model->addNewsLettura($id);	
-			
+		
 		// widget categorie (non serve probabilmente)
 		$data['widget_categorie']=$this->load->view('widget/categorie',$data,TRUE);
 		
@@ -129,6 +145,7 @@ class Blog extends MY_Controller {
 		// widget più letti (passare risultato query 5 post più letti)
 		$data['newspiuletti']=$this->custom->getMostReadNews($cat,5);
 		$data['widget_letti']=$this->load->view('widget/letti',$data,TRUE);
+		
 		
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);

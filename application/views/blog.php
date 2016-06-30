@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								  <div class="post_content">
 									  <?php if (null!=$val->allegati) : ?>
 									   <figure>
-										   <img alt="<?php echo $val->titolo; ?>" src="<?php echo base_url($val->allegati->url); ?>">
+										   <img alt="<?php echo $val->titolo; ?>" src="<?php echo base_url("images/news/".$val->allegati->url); ?>">
 									   </figure>
 									   <?php endif ?>
 									   <p><?php echo word_limiter($val->testo,30); ?></p>

@@ -19,10 +19,6 @@
 	
 	$(document).ready(function(){
 	  $("#carousel1").owlCarousel({		
-		loop:true,
-		autoplay: true,
-		autoplayTimeout: 5000,
-		autoplayHoverPause: true,
 		center:true,
 		video:true,
 		lazyLoad:true,

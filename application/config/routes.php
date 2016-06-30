@@ -55,8 +55,8 @@ $route['cookie'] = 'home/cookie';
 $route['notizie/(:num)'] = 'blog/index/1/$1';
 $route['rassegna-stampa/(:num)'] = 'blog/index/2/$1';
 // articoli blog singoli
-$route['notizie/(:any)/(:num)'] = 'blog/single/1/$2';
-$route['rassegna-stampa/(:any)/(:num)'] = 'blog/single/2/$2';
+$route['notizie/(:any)/(:num)'] = 'blog/single/1/$2/$1';
+$route['rassegna-stampa/(:any)/(:num)'] = 'blog/single/2/$2/$1';
 // pagine blog
 $route['notizie'] = 'blog/index/1';
 $route['rassegna-stampa'] = 'blog/index/2';

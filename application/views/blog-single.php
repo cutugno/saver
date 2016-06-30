@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
      </section>
      <section>
-          <div class="container">
+          <div class="container" id="blogelem">
                <div class="row">
                     <div id="leftcol" class="col-sm-8 col-md-8">
                          <article class="post">
@@ -24,27 +24,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								     <?php foreach ($single->allegati as $key=>$all) : ?>
 										<?php if ($all->tipologia==1) : ?>
 										   <figure data-hash="<?php echo $key; ?>">
-											   <img alt="<?php echo $all->alt; ?>" src="<?php echo base_url($all->url); ?>">
+											   <img alt="<?php echo $all->alt; ?>" src="<?php echo base_url("images/news/".$all->url); ?>">
 										   </figure>
 										<?php endif ?> 
 									  <?php endforeach ?>
 								   <?php endif ?>                                   
                               </div>
                               <p><?php echo $single->testo; ?></p>
-                              <?php if (count($single->allegati)>1) : ?>
+                              <?php //if (count($single->allegati)>1) : ?>
                               <div class="row post-attachments" id="carousel2">
 								  <?php for ($x=0;$x<count($single->allegati);$x++) : ?>
 									  <?php if ($single->allegati[$x]->tipologia==1) : ?>
-									  <a href="#<?php echo $x; ?>"><img alt="<?php echo $single->allegati[$x]->alt; ?>" src="<?php echo base_url($single->allegati[$x]->url); ?>"></a>									 
+									  <a href="#<?php echo $x; ?>"><img alt="<?php echo $single->allegati[$x]->alt; ?>" src="<?php echo base_url("images/news/".$single->allegati[$x]->url); ?>"></a>									 
 									  <?php endif ?>
 								  <?php endfor ?>
                               </div>
                                  <?php for ($x=0;$x<count($single->allegati);$x++) : ?>
 									<?php if ($single->allegati[$x]->tipologia==2) : ?>
-									  <i class="fa fa-download"></i> <a href="<?php echo base_url($single->allegati[$x]->url); ?>" target="_blank">Scarica <?php echo $single->allegati[$x]->alt; ?></a>								  
+									  <i class="fa fa-download"></i> <a href="<?php echo base_url("files/news/".$single->allegati[$x]->url); ?>" target="_blank">Scarica <?php echo $single->allegati[$x]->alt; ?></a>								  
 									<?php endif ?>
 								  <?php endfor ?>
-                              <?php endif ?>
+                              <?php //endif ?>
                          </article>                         
                     </div>
                     <div id="sidebar" class="col-sm-4 col-md-4">

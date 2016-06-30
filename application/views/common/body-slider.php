@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <div id="main_flexslider" class="flexslider">
           <ul class="slides">
                <?php foreach ($slider_img as $img) : ?>
-				  <li class="item" style="background-image: url(<?php echo base_url($img); ?>)">
+				  <li class="item" style="background-image: url(<?php echo base_url("images/".$img); ?>)">
                <?php endforeach ?>
           </ul>
      </div>

@@ -16,7 +16,7 @@ class Azienda extends MY_Controller {
 		$data['aziendaactive']=" class='active'";
 		
 		// slider
-		$data['slider_img']=["images/slider-4.jpg","images/slider-5.jpg","images/slider-6.jpg"];
+		$data['slider_img']=["carouselazienda_01.jpg","carouselazienda_02.jpg","carouselazienda_03.jpg","carouselazienda_04.jpg","carouselazienda_05.jpg","carouselazienda_06.jpg"];
 		
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);

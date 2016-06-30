@@ -91,3 +91,11 @@ p.bg-primary {
 .carbox {
 	margin-bottom: 20px;
 }
+
+#blogelem #carousel1 img {
+	max-height: 400px; 
+}
+
+#blogelem #carousel2 img {
+	max-height: 165px; 
+}
