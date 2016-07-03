@@ -20,6 +20,7 @@
 			
 			$query=$this->db->select('*')
 							->where('id_categoria',$cat)
+							->order_by('data_ins','DESC')
 							->limit(NEWSPERPAGE,$start)
 							->get('news');
 						
@@ -57,6 +58,7 @@
 				
 			$query=$this->db->select('news.*,categorieN.categoria')
 						->join('categorieN', 'categorieN.id=news.id_categoria')
+						->where('id_categoria',1)
 						->order_by('data_ins','DESC')
 						->limit($limit)
 						->get('news');

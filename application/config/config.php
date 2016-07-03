@@ -9,7 +9,7 @@ define ('PROFILER',FALSE); // abilita/disabilita profiler e benchmark; gestito i
 define ('SERVICE',FALSE); // abilita/disabilita manutenzione; gestita in application/core/MY_Controller
 define ('WHITELIST', '127.0.0.1 192.168.1.110'); // elenco ip abilitati a bypassare la manutenzione
 
-define ('NEWSPERPAGE', 3);
+define ('NEWSPERPAGE', 4);
 
 define ('CONTACTDEST','sberz666@gmail.com');
 define ('CONTACTSUBJECT','Richiesta contatti Saver');

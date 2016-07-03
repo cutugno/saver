@@ -28,6 +28,7 @@
 			
 			$query=$this->db->select('*')
 							->where('id_categoria',$cat)
+							->order_by('ordine','ASC')
 							->get('prodotti');
 						
 			return $query->result();

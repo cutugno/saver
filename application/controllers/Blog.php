@@ -19,13 +19,13 @@ class Blog extends MY_Controller {
 		switch ($cat) {
 			case 1:
 				$data['titolocat']="Notizie";
-				$data['sottotitolocat']="Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.";
+				$data['sottotitolocat']="";
 				$data['notizieactive']=" class='active'";				
 				break;
 			case 2:
 				
 				$data['titolocat']="Rassegna Stampa";
-				$data['sottotitolocat']="Nullam eget tortor purus, id molestie sapien. In hac habitasse platea dictumst. Donec aliquet tellus enim, a tincidunt nulla.";
+				$data['sottotitolocat']="";
 				$data['rassegnaactive']=" class='active'";
 				break;
 		}		
