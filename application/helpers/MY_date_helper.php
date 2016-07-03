@@ -21,11 +21,13 @@
 		$hdate=human_to_unix($date);
 		$giorno=date("d",$hdate);
 		$mese=date("M",$hdate);
+		$mese=date("M",$hdate);
+		$anno=date("y",$hdate);
 				
 		$shortlang=substr($CI->session->lang,0,2);
 		if ($shortlang=="it") $mese=traduciMese($mese);
 		
-		return array("giorno"=>$giorno, "mese"=>$mese);
+		return array("giorno"=>$giorno, "mese"=>$mese, "anno"=>$anno);
 		
 	}
 	

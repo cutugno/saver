@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <?php if (null!=$newsfooter) : ?>
                               <ul class="media-list">
 								     <?php foreach ($newsfooter as $key=>$val) :?>
-									 <li class="media"> <a href="#" class="media-date"><?php echo $val->data_ins['giorno']; ?><span><?php echo $val->data_ins['mese']; ?></span></a>
+									 <li class="media"> <a href="#" class="media-date"><?php echo $val->data_ins['giorno']; ?><span><?php echo $val->data_ins['mese']; ?></span><?php echo $val->data_ins['anno']; ?></a>
 										<h5 class="media-heading"><a href="<?php echo site_url(strtolower($val->categoria.'/'.$val->slug.'/'.$val->id)); ?>"><?php echo $val->titolo; ?></a></h5>
 										<p><?php echo word_limiter($val->testo,10); ?></p>
 								     </li>								     

@@ -43,7 +43,7 @@ class Blog extends MY_Controller {
 				$testo=json_decode($val->testo);
 				$news[$key]->testo=$testo->$lang;
 				// aggiusto data per visualizzazione
-				$news[$key]->data_ins=convertDateTime($news[$key]->data_ins);
+				$news[$key]->data_ins=convertDateTime($news[$key]->data_ins);				
 				// aggiungo eventuali prima immagine a news
 				$allegati=$this->news_model->getNewsFirstImage($val->id);
 				$news[$key]->allegati=$allegati ? $allegati : "";
