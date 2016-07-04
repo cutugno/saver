@@ -21,6 +21,7 @@
 			$query=$this->db->select('*')
 							->where('id_categoria',$cat)
 							->order_by('data_ins','DESC')
+							->order_by('ordine','DESC')
 							->limit(NEWSPERPAGE,$start)
 							->get('news');
 						
