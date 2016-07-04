@@ -7,14 +7,18 @@ class Prodotti extends MY_Controller {
 		
 		if (empty($cat)) redirect(base_url());
 		
+		$lang=substr($this->session->lang,0,2);
 		// ultime news (va in tutti i controller)
 		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
 		// categoria
-		$data['cat']=$this->prodotti_model->getCategoriaPbyId($cat);
+		$categoria=$this->prodotti_model->getCategoriaPbyId($cat);
+		$sottotitolo=json_decode($categoria->sottotitolo);
+		$categoria->sottotitolo=$sottotitolo->$lang;
+		$data['categoria']=$categoria;
 		
 		// slider
-		$data['slider_img']=[$data['cat']->img];
+		$data['slider_img']=[$data['categoria']->img];
 		
 		$lang=substr($this->session->lang,0,2);
 		
