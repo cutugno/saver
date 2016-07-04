@@ -29,6 +29,7 @@ class Blog extends MY_Controller {
 				$data['rassegnaactive']=" class='active'";
 				break;
 		}		
+		$data['cat']=$cat;
 		
 		$lang=substr($this->session->lang,0,2);
 		
@@ -118,6 +119,7 @@ class Blog extends MY_Controller {
 				$data['rassegnaactive']=" class='active'";
 				break;
 		}	
+		$data['cat']=$cat;
 		
 		// dati singolo articolo
 		$single=$this->news_model->getNewsbyId($id);
@@ -145,8 +147,7 @@ class Blog extends MY_Controller {
 		// widget più letti (passare risultato query 5 post più letti)
 		$data['newspiuletti']=$this->custom->getMostReadNews($cat,5);
 		$data['widget_letti']=$this->load->view('widget/letti',$data,TRUE);
-		
-		
+				
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
 		$this->load->view('common/body-main-start');

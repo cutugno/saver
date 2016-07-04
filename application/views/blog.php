@@ -22,7 +22,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							 <article class="post">
 								  <div class="post_header">
 									   <h3 class="post_title"><a href="<?php echo site_url($this->uri->segment(1)."/".$val->slug."/".$val->id); ?>"><?php echo $val->titolo; ?></a></h3>
+									   <?php if ($cat==1) : ?>
 									   <div class="post_sub"><i class="fa fa-clock-o"></i> Pubblicato il <strong><?php echo $val->data_ins; ?></strong></div>
+									   <?php endif ?>
 								  </div>
 								  <div class="post_content">
 									  <?php if (null!=$val->allegati) : ?>
