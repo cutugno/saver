@@ -26,4 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			window.location.reload();
 		});
 	});
+	
+	// tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
 </script>
