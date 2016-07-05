@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								  </div>	
 								  <?php if (NULL!=$prodotto->download_url) : ?>
 								  <ul class="pager">
-									<li class="previous"><a href="<?php echo site_url("files/".$prodotto->download_url); ?>" target="_blank"><i class="fa fa-camera" aria-hidden="true"></i> Scarica foto in Hi-Res</a></li>
+									<li class="previous"><a href="<?php echo site_url("files/download/".$prodotto->download_url); ?>" target="_blank"><i class="fa fa-camera" aria-hidden="true"></i> Scarica foto in Hi-Res</a></li>
 								  </ul>	
 								  <?php endif ?>
 							</div>							
