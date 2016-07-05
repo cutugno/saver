@@ -84,6 +84,9 @@ class Prodotti extends MY_Controller {
 		shuffle($media);
 		$data['media']=$media;		
 		
+		// dati particolari prodotto
+		$data['particolari']=$this->prodotti_model->getParticolariProdottoById($id);
+		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
         

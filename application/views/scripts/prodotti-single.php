@@ -1,3 +1,5 @@
+<script src="<?php echo site_url('js/jquery.rwdImageMaps.min.js'); ?>" type="text/javascript"></script>
+
 <script type="text/javascript">
 	
 	function changeVideoHeight(videoItem) { 
@@ -18,6 +20,9 @@
 	}
 	
 	$(document).ready(function(){
+	  //mappa sensitive responsive
+	  $('.sensitive img').rwdImageMaps();	  
+	  
 	  $("#carousel1").owlCarousel({		
 		center:true,
 		video:true,
@@ -50,6 +55,33 @@
 		$("#"+lang).show();
 		
 	});
+	
+	// hover area sensitive
+	function changePartImg(elem,dest,callback) {
+		var srcimg=elem.attr("data-img");
+		srcimg=imgroot+"/"+srcimg;
+		dest.attr("src",srcimg);		
+		callback;
+	}
+	function resetPartImg(dest) {
+		dest.attr("src","");		
+	}
+	function fadeInImg(cont) {
+		cont.fadeIn(250);
+	}
+	
+	var imgroot="<?php echo site_url('images/prodotti/sensitive'); ?>";
+	
+	$(".circle").hover(		
+		function() {
+			changePartImg($(this),$("#particolare"),fadeInImg($("#particolare")));			
+		},
+		function() {
+			$("#particolare").fadeOut(200, function() {
+				resetPartImg($("#particolare"));
+			});
+		}
+	);
 	
 </script>
 

@@ -63,6 +63,16 @@
 			return $query->row();
 			
 		}
+		
+		public function getParticolariProdottoById($id) {
+			
+			$query=$this->db->select('*')
+				->where('id_prodotto',$id)
+				->get('particolari');
+				
+			return $query->result();
+			
+		}
 	
 	}
 	

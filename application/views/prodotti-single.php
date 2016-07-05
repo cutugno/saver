@@ -203,11 +203,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-xs-12">
 						<h2 class="section_header">Area sensitive (v. /var/www/html/map)</h2>
 					</div>
-					<div class="col-sm-8 col-md-8">
-						<p>immagine sensitive</p>
+					<div class="col-sm-7 sensitive">
+						<img class="img-responsive" src="<?php echo site_url('images/prodotti/sensitive/'.$prodotto->img_part); ?>" usemap="#map" />
+						<map name="map">
+							<!-- 280 cabin -->
+							<?php foreach ($particolari as $val) : ?>
+							<area class="circle" id="circle_<?php echo $prodotto->id; ?>_<?php echo $val->id; ?>" shape="circle" coords="<?php echo $val->coord_x; ?>,<?php echo $val->coord_y; ?>,15" data-img="<?php echo $val->foto; ?>" />
+							<?php endforeach ?>
+						</map>
 					</div>
-					<div class="col-sm-4 col-md-4">
-						<p>immagine particolare sensitive</p>
+					<div class="col-sm-5">
+						<img id="particolare" class="img-responsive" style="display:none" />
 					</div>
                </div>
           </div>     
