@@ -206,9 +206,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-sm-7 sensitive">
 						<img class="img-responsive" src="<?php echo site_url('images/prodotti/sensitive/'.$prodotto->img_part); ?>" usemap="#map" />
 						<map name="map">
-							<!-- 280 cabin -->
 							<?php foreach ($particolari as $val) : ?>
-							<area class="circle" id="circle_<?php echo $prodotto->id; ?>_<?php echo $val->id; ?>" shape="circle" coords="<?php echo $val->coord_x; ?>,<?php echo $val->coord_y; ?>,15" data-img="<?php echo $val->foto; ?>" />
+							<area class="map_circle" shape="circle" coords="<?php echo $val->coord_x; ?>,<?php echo $val->coord_y; ?>,15" data-img="<?php echo $val->foto; ?>" />
 							<?php endforeach ?>
 						</map>
 					</div>

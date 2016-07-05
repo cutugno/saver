@@ -77,7 +77,7 @@
 	
 	var imgroot="<?php echo site_url('images/prodotti/sensitive'); ?>";
 	
-	$(".circle").hover(		
+	$(".map_circle").hover(		
 		function() {
 			changePartImg($(this),$("#particolare"),fadeInImg($("#particolare")));			
 		},
