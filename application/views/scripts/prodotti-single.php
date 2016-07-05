@@ -7,7 +7,6 @@
 		var maxw=1170;
 		var videoh=0;
 		var ww=$(window).width();
-		console.log(ww);
 		if (ww<minw) {
 			videoh=(ww-40)/1.5;
 		} else if ((ww>=minw) && (ww<=maxw)) {
@@ -15,7 +14,6 @@
 		} else {
 			videoh=((maxw*0.66)-30)/1.5;
 		}
-		console.log(videoh);
 		$(videoItem).css("height",videoh);
 	}
 	
