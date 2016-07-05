@@ -201,7 +201,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
                <div class="row areasensitive hidden-xs">
 					<div class="col-xs-12">
-						<h2 class="section_header">Area sensitive (v. /var/www/html/map)</h2>
+						<h2 class="section_header">Area sensitive</h2>
 					</div>
 					<div class="col-sm-7 sensitive">
 						<img class="img-responsive" src="<?php echo site_url('images/prodotti/sensitive/'.$prodotto->img_part); ?>" usemap="#map" />

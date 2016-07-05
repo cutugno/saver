@@ -69,6 +69,11 @@
 	function fadeInImg(cont) {
 		cont.fadeIn(250);
 	}
+	function fadeOutImg(dest) {
+		$("#particolare").fadeOut(200, function() {
+			resetPartImg($("#particolare"));
+		});
+	}
 	
 	var imgroot="<?php echo site_url('images/prodotti/sensitive'); ?>";
 	
