@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               </figure>
                               </a>
                               <div class="portfolio_description">
-                                   <h3><a href="portfolio_item.html"><?php echo $val->modello; ?></a></h3>
+                                   <h3><?php echo $val->modello; ?></h3>
                               </div>
                          </div>                         
                     </div>
