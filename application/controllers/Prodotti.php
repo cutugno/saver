@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Prodotti extends MY_Controller {
 	
-	public function index($cat) {
+	public function index($cat) {		
 		
 		if (empty($cat)) redirect(base_url());
 		
@@ -59,7 +59,7 @@ class Prodotti extends MY_Controller {
 		$prodotto=$this->prodotti_model->getProdottobyId($id);
 		if (empty($prodotto)) redirect('home');
 		// controllo slug categoria e modello corretto
-		$cat_slug="linea-".strtolower($prodotto->categoria);
+		$cat_slug="linea-".strtolower(url_title($prodotto->categoria));
 		$prod_slug=strtolower(url_title($prodotto->modello));
 		if (($this->uri->segment(2)!=$cat_slug) || ($this->uri->segment(3)!=$prod_slug)) redirect('prodotti/'.$cat_slug.'/'.$prod_slug.'/'.$id);		
 		
