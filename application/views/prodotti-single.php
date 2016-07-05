@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                </div> 
                <div class="row caratteristiche" style="margin-top:20px">
 				  <div class="col-xs-12">
-					  <h2 class="section_header">Caratteristiche
+					  <h2 class="section_header">
 						<select id="car_lingua" class="form-control input-sm pull-right">
 							<option value="car_it">Italiano</option>
 							<option value="car_en">English</option>
