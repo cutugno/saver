@@ -107,3 +107,7 @@ p.bg-primary {
 li.media a.media-date {
 	padding-top: 5px;
 }
+
+.footer_teaser button {
+	width:60px;
+}

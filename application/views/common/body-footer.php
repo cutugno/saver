@@ -20,14 +20,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <section id="footer_teasers_wrapper">
                <div class="container">
                     <div class="row">
-                         <div class="footer_teaser col-sm-4 col-md-4">
+                         <div class="footer_teaser col-sm-4">
                               <h3>Contatti</h3>
                               <p><i class="fa fa-map-marker"></i> Viale Regione Siciliana, 32 - Loc.tà Zappardino - 98060 Piraino (ME)</p>
                               <p><i class="fa fa-phone"></i> 0941 302147</p>
                               <p><i class="fa fa-print"></i> 0941 303534</p>
                               <p><i class="fa fa-envelope"></i> <a href="mailto:saverimbarcazioni@tiscali.it">saverimbarcazioni@tiscali.it</a></p>
                          </div>
-                         <div class="footer_teaser col-sm-4 col-md-4">
+                         <div class="footer_teaser col-sm-4">
                               <h3>Ultime notizie</h3>
                               <?php // var_dump ($news); ?>
                               <?php if (null!=$newsfooter) : ?>
@@ -42,11 +42,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <?php else : ?>
                               Nessun elemento disponibile
                               <?php endif ?>
-                         </div>
-
-                         <div class="footer_teaser col-sm-4 col-md-4" >
+                         </div>			
+                         <div class="footer_teaser col-sm-4">
                               <h3>Social</h3>
-                              
+                              <a href=""><button class="btn btn-success"><i class="fa fa-facebook fa-3x"></i></button></a>
+                              <a href=""><button class="btn btn-success"><i class="fa fa-youtube fa-3x"></i></button></a>
                          </div>
                          
                     </div>
