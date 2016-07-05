@@ -56,6 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                </div>
           </div>     
      </section>
+     <!--
      <section class="clients_section wow animated fadeInUp">
           <div class="container">
                <h2 class="section_header elegant centered">I nostri partner<small>Professionisti che collaborano con noi</small></h2>
@@ -68,3 +69,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   </div>
           </div>     
      </section>
+	-->

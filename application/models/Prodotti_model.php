@@ -73,6 +73,16 @@
 			return $query->result();
 			
 		}
+		
+		public function getRandomCategoriaP() {
+			
+			$query=$this->db->order_by('id','RANDOM')
+						    ->limit(1)
+						    ->get('categorieP');
+						    
+			return $query->row();
+						 
+		}
 	
 	}
 	

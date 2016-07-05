@@ -28,11 +28,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <div class="col-sm-4 col-md-4">
                     <div class="service_teaser vertical">
                          <div class="service_photo">
-                              <figure style="background-image:url(<?php echo base_url('images/serv_6.jpg'); ?>)"></figure>
+                              <figure style="background-image:url(<?php echo base_url('images/prodotti'.$categoria->img); ?>)"></figure>
                          </div>
                          <div class="service_details">
-                              <h2 class="section_header skincolored"><b>Gommoni</b> MG<small>Adatti per la navigazione quotidiana</small></h2>
-                              <a class="btn btn-primary" href="<?php echo site_url('prodotti/linea-gommoni-mg'); ?>">Scopri la gamma</a> </div>
+                              <h2 class="section_header skincolored"><strong>Linea <?php echo $categoria->categoria; ?></strong><small><?php echo $categoria->sottotitolo; ?></small></h2>
+                              <a class="btn btn-primary" href="<?php echo site_url('prodotti/linea-'.strtolower(url_title($categoria->categoria))); ?>">Scopri la gamma</a> </div>
                     </div>
                </div>
           </div>

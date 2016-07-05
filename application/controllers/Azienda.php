@@ -8,6 +8,8 @@ class Azienda extends MY_Controller {
 		// ultime news (va in tutti i controller)
 		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
+		$lang=substr($this->session->lang,0,2);
+		
 		// menu lingua
         $data['lang_vers']=($this->session->lang=="italian") ? "<a href=\"#\" id=\"c_lan\" lang=\"english\">English Version</a>" : "<a href=\"#\" id=\"c_lan\" lang=\"italian\">Versione Italiana</a>";
 		
@@ -17,6 +19,12 @@ class Azienda extends MY_Controller {
 		
 		// slider
 		$data['slider_img']=["carouselazienda_01.jpg","carouselazienda_02.jpg","carouselazienda_03.jpg","carouselazienda_04.jpg","carouselazienda_05.jpg","carouselazienda_06.jpg"];
+		
+		// categoria random
+		$categoria=$this->prodotti_model->getRandomCategoriaP();
+		$sottotitolo=json_decode($categoria->sottotitolo);
+		$categoria->sottotitolo=$sottotitolo->$lang;
+		$data['categoria']=$categoria;
 		
 		$this->load->view('common/head');
 		$this->load->view('common/body-header',$data);
