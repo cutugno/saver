@@ -43,9 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									  <div><a href="#<?php echo $key; ?>"><img src="<?php echo $val->tipologia==1 ? base_url("images/prodotti/".$val->url_tn) : base_url('images/video.jpg'); ?>" alt=""></a></div>	<?php endforeach ?>			  					 
 								  </div>	
 								  <?php if (NULL!=$prodotto->download_url) : ?>
-								  <ul class="pager">
-									<li class="previous"><a href="<?php echo site_url("files/download/".$prodotto->download_url); ?>" target="_blank"><i class="fa fa-camera" aria-hidden="true"></i> Scarica foto in Hi-Res</a></li>
-								  </ul>	
+								  <a class="btn btn-success" href="<?php echo site_url("files/download/".$prodotto->download_url); ?>" target="_blank"><i class="fa fa-camera" aria-hidden="true"></i> Scarica foto in Hi-Res</a></li>
 								  <?php endif ?>
 							</div>							
 						</div>	
