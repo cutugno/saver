@@ -108,7 +108,11 @@ class Blog extends MY_Controller {
 		// menu active
 		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['prodottiactive']=$data['reteactive']=$data['contattiactive']="";
 
-		// menu active e varie
+		// info categoria
+		$categoria=$this->news_model->getCategoriaNbyId($cat);
+		$titolocat=json_decode($categoria->titolo);
+		$categoria->titolo=$titolocat->$lang;
+		
 		switch ($cat) {
 			case 1:
 				$data['titolocat']="Notizie";
@@ -119,6 +123,7 @@ class Blog extends MY_Controller {
 				$data['rassegnaactive']=" class='active'";
 				break;
 		}	
+		$data['categoria']=$categoria;
 		$data['cat']=$cat;
 		
 		// dati singolo articolo

@@ -28,6 +28,7 @@ $lang['blog_1']=" Pubblicato il ";
 $lang['blog_2']="Leggi tutto";
 $lang['blog_3']="Nessun elemento disponibile";
 $lang['blog_4']=" Torna a ";
+$lang['blog_5']="Scarica .pdf";
 
 $lang['contatti_1']="Contatti";
 $lang['contatti_2']="Per qualsiasi richiesta scriveteci o telefonateci, siamo a disposizione!";

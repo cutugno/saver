@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <?php endif ?>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li><a href="<?php echo site_url($this->uri->segment(1)); ?>"><?php echo $titolocat; ?></a></li>
+                    <li><a href="<?php echo site_url($this->uri->segment(1)); ?>"><?php echo $categoria->titolo; ?></a></li>
                     <li class="active"><?php echo $single->titolo; ?></li>
                </ul>
           </div>
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               </div>
                                  <?php for ($x=0;$x<count($single->allegati);$x++) : ?>
 									<?php if ($single->allegati[$x]->tipologia==2) : ?>
-									  <i class="fa fa-download"></i> <a href="<?php echo base_url("files/news/".$single->allegati[$x]->url); ?>" target="_blank">Scarica <?php echo $single->allegati[$x]->alt; ?></a>								  
+									  <i class="fa fa-download"></i> <a href="<?php echo base_url("files/news/".$single->allegati[$x]->url); ?>" target="_blank"><?php echo $this->lang->line('blog_5'); ?></a>								  
 									<?php endif ?>
 								  <?php endfor ?>
                               <?php //endif ?>
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <section>
           <div class="container">
                <ul class="pager">
-                    <li class="previous"><a href="<?php echo base_url($this->uri->segment(1)); ?>">←<?php echo $this->lang->line('blog_4'); ?><?php echo $titolocat; ?></a></li>          
+                    <li class="previous"><a href="<?php echo base_url($this->uri->segment(1)); ?>">←<?php echo $this->lang->line('blog_4'); ?><?php echo $categoria->titolo; ?></a></li>          
                        
                </ul>
           </div>

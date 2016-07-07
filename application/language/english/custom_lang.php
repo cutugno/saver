@@ -28,6 +28,7 @@ $lang['blog_1']=" Published on ";
 $lang['blog_2']="Read more";
 $lang['blog_3']="No item available";
 $lang['blog_4']=" Back to ";
+$lang['blog_5']="Download .pdf";
 
 $lang['contatti_1']="Contacts";
 $lang['contatti_2']="We can assist you for any demand, please write us or phone us!";
@@ -70,8 +71,8 @@ $lang['rete_8']="Nautica Lieto in Gaeta (LT)";
 $lang['rete_9']="We therefore invite all boaters, already customers SAVER or not, to be wary of any proposal or offer regarding our prdoucts from dealers that don't appear on this list, as the same is not part of our official sales network are not entitled to any type of brokerage, marketing and sales. The SAVER company also reserves the right to recognize or refuse any warranties on products not purchased directly and exclusively by its Sales Network.";
 
 $lang['footer_1']="Contacts";
-$lang['footer_2']="Last news";
-$lang['footer_2']="No item available";
+$lang['footer_2']="Latest news";
+$lang['footer_3']="No item available";
 
 $lang['widget_letti_1']="Most read articles";
 
