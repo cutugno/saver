@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="container">
                <h1><?php echo $single->titolo; ?></h1>
                <?php if ($cat==1) : ?>
-               <h2><i class="fa fa-clock-o"></i> Pubblicato il <strong><?php echo $single->data_ins; ?></strong></h2>
+               <h2><i class="fa fa-clock-o"></i><?php echo $this->lang->line('blog_1'); ?><strong><?php echo $single->data_ins; ?></strong></h2>
                <?php endif ?>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <section>
           <div class="container">
                <ul class="pager">
-                    <li class="previous"><a href="<?php echo base_url($this->uri->segment(1)); ?>">← Torna a <?php echo $titolocat; ?></a></li>          
+                    <li class="previous"><a href="<?php echo base_url($this->uri->segment(1)); ?>">←<?php echo $this->lang->line('blog_4'); ?><?php echo $titolocat; ?></a></li>          
                        
                </ul>
           </div>

@@ -4,11 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<section class="hgroup">
           <div class="container">
-               <h1>Rete vendita</h1>
-               <h2>Clicca sul segnalino per avere maggiori informazioni sull'affiliato</h2>
+               <h1><?php echo $this->lang->line('rete_1'); ?></h1>
+               <h2><?php echo $this->lang->line('rete_2'); ?></h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li class="active">Rete vendita</li>
+                    <li class="active"><?php echo $this->lang->line('rete_1'); ?></li>
                </ul>
            </div>
       </section>
@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="scheda-affiliato col-sm-8 col-md-8" id="descr">
                     </div>
                     <div class="col-sm-4 col-md-4">
-                        <button class="btn btn-default" data-toggle="modal" data-target="#avviso_utenti">Avviso per gli utenti</button>
+                        <button class="btn btn-default" data-toggle="modal" data-target="#avviso_utenti"><?php echo $this->lang->line('rete_3'); ?></button>
                     </div>
                </div>
            </div>
@@ -29,17 +29,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="modal-content">
 				  <div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Avviso per gli utenti</h4>
+					<h4 class="modal-title" id="myModalLabel"><?php echo $this->lang->line('rete_3'); ?></h4>
 				  </div>
 				  <div class="modal-body">
-						<p>S'informa la spettabile clientela SAVER e tutti i diportisti interessati ai nostri prodotti e residenti nella regione Lazio che gli unici dealer ufficiali da noi autorizzati a vendere ed a promuovere sotto qualsiasi forma ed attraverso qualsiasi mezzo pubblicitario (editoria specializzata e non, web, promo, TV, etc) i prodotti a marchio SAVER sono i seguenti:</p>
+						<p><?php echo $this->lang->line('rete_4'); ?></p>
 						<ul>
-							<li>Alimar a fiumicino (RM)</li>
-							<li>Autonautica Diglio a Bolsena (VT)</li>
-							<li>G.B. Nautico Unipersonale a Borgo Grappa (LT)</li>
-							<li>Nautica Lieto a Gaeta (LT)</li>
+							<li><?php echo $this->lang->line('rete_5'); ?></li>
+							<li><?php echo $this->lang->line('rete_6'); ?></li>
+							<li><?php echo $this->lang->line('rete_7'); ?></li>
+							<li><?php echo $this->lang->line('rete_8'); ?></li>
 						</ul>
-						<p>Invitiamo pertanto tutti i diportisti, già clienti SAVER e non, a diffidare di qualsiasi proposta od offerta riguardante i nostri prodotti proveniente da dealer non presenti in questo elenco, in quanto gli stessi, non facendo parte della nostra rete di vendita ufficiale, non sono autorizzati a nessun tipo di intermediazione, promozione e vendita. La SAVER si riserve inoltre la facolta di riconoscere o meno eventuali garanzie su prodotti non acquistati direttamente ed esclusivamente dalla sua rete di vendita ufficiale.</p>
+						<p><?php echo $this->lang->line('rete_9'); ?></p>
 				  </div>				  
 				</div>
 			  </div>

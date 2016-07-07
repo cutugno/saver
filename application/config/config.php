@@ -14,6 +14,8 @@ define ('NEWSPERPAGE', 4);
 define ('CONTACTDEST','sberz666@gmail.com');
 define ('CONTACTSUBJECT','Richiesta contatti Saver');
 
+define ('LINKFB','https://www.facebook.com/pages/Saver-Srl/457378181111500');
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

@@ -92,5 +92,12 @@
 			return $query->result();
 			
 		}
+		
+		public function getCategoriaNbyId($id) {
+			
+			$query=$this->db->get_where('categorieN',array('id'=>$id));
+			return $query->row();
+			
+		}
 	}
 	

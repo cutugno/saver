@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                </div>
           </div>
           <div id="social_media_wrapper"> 
-			  <a href="#"><i class="fa fa-facebook"></i></a> 
+			  <a href="<?php echo LINKFB; ?>" target="_blank"><i class="fa fa-facebook"></i></a> 
 			  <a href="#"><i class="fa fa-youtube"></i></a> 
 			  <a href="#"><i class="fa fa-envelope"></i></a> </div>
           <div id="sign"><small><?php echo $lang_vers; ?></small>

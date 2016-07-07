@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <h2><?php echo $prodotto->sottotitolo; ?></h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li><a href="<?php echo site_url($this->uri->segment(1)."/".$this->uri->segment(2)); ?>">Prodotti > Linea <?php echo $prodotto->categoria; ?></a> </li>
+                    <li><a href="<?php echo site_url($this->uri->segment(1)."/".$this->uri->segment(2)); ?>"><?php echo $this->lang->line('prodotti_1'); ?><?php echo $prodotto->categoria; ?></a> </li>
                     <li class="active"><?php echo $prodotto->modello; ?></li>
                </ul>
           </div>
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									  <div><a href="#<?php echo $key; ?>"><img src="<?php echo $val->tipologia==1 ? base_url("images/prodotti/".$val->url_tn) : base_url('images/video.jpg'); ?>" alt=""></a></div>	<?php endforeach ?>			  					 
 								  </div>	
 								  <?php if (NULL!=$prodotto->download_url) : ?>
-								  <a class="btn btn-success" href="<?php echo site_url("files/download/".$prodotto->download_url); ?>" target="_blank"><i class="fa fa-camera" aria-hidden="true"></i> Scarica foto in Hi-Res</a></li>
+								  <a class="btn btn-success" href="<?php echo site_url("files/download/".$prodotto->download_url); ?>" target="_blank"><i class="fa fa-camera" aria-hidden="true"></i><?php echo $this->lang->line('prodotti_3'); ?></a></li>
 								  <?php endif ?>
 							</div>							
 						</div>	
@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-sm-4 col-md-4">
                          <article class="portfolio_details">
 						
-                              <h2 class="section_header">Descrizione</h2>
+                              <h2 class="section_header"><?php echo $this->lang->line('prodotti_4'); ?></h2>
                               <p><?php echo $prodotto->descr; ?></p>
 						</article>						
                     </div>
@@ -202,11 +202,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<h2 class="section_header"></h2>
 					</div>
 					<div class="col-sm-7 sensitive">
-						<p class="lead">Area sensitive</p>
+						<p class="lead"><?php echo $this->lang->line('prodotti_5'); ?></p>
 						<img class="img-responsive" src="<?php echo site_url('images/prodotti/sensitive/'.$prodotto->img_part); ?>" usemap="#map" />
 						<map name="map">
 							<?php foreach ($particolari as $val) : ?>
-							<area class="map_circle" shape="circle" coords="<?php echo $val->coord_x; ?>,<?php echo $val->coord_y; ?>,20" data-img="<?php echo $val->foto; ?>" />
+							<area class="map_circle" shape="circle" coords="<?php echo $val->coord_x; ?>,<?php echo $val->coord_y; ?>,<?php echo $val->coord_r; ?>" data-img="<?php echo $val->foto; ?>" />
 							<?php endforeach ?>
 						</map>
 					</div>
@@ -219,7 +219,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      <section>
           <div class="container">
                <ul class="pager">
-                    <li class="previous"><a href="<?php echo site_url($this->uri->segment(1)."/".$this->uri->segment(2)); ?>">← Torna a Linea <?php echo $prodotto->categoria; ?></a></li>
+                    <li class="previous"><a href="<?php echo site_url($this->uri->segment(1)."/".$this->uri->segment(2)); ?>">←<?php echo $this->lang->line('prodotti_6'); ?><?php echo $prodotto->categoria; ?></a></li>
                </ul>
           </div>
      </section>

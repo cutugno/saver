@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 <aside class="widget">
-	  <h4>Articoli più letti</h4>
+	  <h4><?php echo $this->lang->line('widget_letti_1'); ?></h4>
 	  <div class="">
 		 <?php if (null!=$newspiuletti) : ?>
 		 <?php //var_dump ($newspiuletti); ?>

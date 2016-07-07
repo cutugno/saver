@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                <h2><?php echo $categoria->sottotitolo; ?></h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li class="active">Prodotti > Linea <?php echo $categoria->categoria; ?></li>
+                    <li class="active"><?php echo $this->lang->line('prodotti_1'); ?><?php echo $categoria->categoria; ?></li>
                </ul>
           </div>
      </section>
@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									   </svg>
 									   <figcaption>
 											<p><?php echo $val->sottotitolo; ?></p>
-											<div class="view_button">Vedi</div>
+											<div class="view_button"><?php echo $this->lang->line('prodotti_2'); ?></div>
 									   </figcaption>
 								  </figure>
                               </a>

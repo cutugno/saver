@@ -45,7 +45,7 @@ $(document).ready(function() {
         var user_message    = $('#messaggio').val();
         
         var notice     = $("#notice");
-        var $req_fields    = "Tutti i campi sono obbligatori.";
+        var $req_fields    = "<?php echo $this->lang->line('contatti_script_1'); ?>";
 
         //simple validation at client's end
         var proceed = true;
@@ -73,7 +73,7 @@ $(document).ready(function() {
 		if (!testExp(user_email,regexp)) {
 			$("#email").val("");
 			$('#email').css('border-color','red');
-			notice.append(" Formato email non valido."); 
+			notice.append("<?php echo $this->lang->line('contatti_script_2'); ?>"); 
 			proceed = false;
 		}
         
@@ -88,7 +88,7 @@ $(document).ready(function() {
 
         //everything looks good! proceed...
         if (proceed) {
-			notice.removeClass().html("Invio in corso...").addClass("alert alert-info").fadeIn(400);
+			notice.removeClass().html("<?php echo $this->lang->line('contatti_script_3'); ?>").addClass("alert alert-info").fadeIn(400);
             // data to be sent to server
             post_data = $("#contact_form").serialize();
             
@@ -96,13 +96,13 @@ $(document).ready(function() {
             $.post('<?php echo site_url('contatti/sendmail'); ?>', post_data, function(response){                  
                 //load json data from server and output message     
                 if(response) {
-					output="Mail inviata. Grazie per averci contattato.";                    
+					output="<?php echo $this->lang->line('contatti_script_4'); ?>";                    
                     //reset values in all input fields
                     $('#contact_form input').val(''); 
                     $('#contact_form textarea').val(''); 
 					notice.removeClass().html(output).addClass("alert alert-success").fadeIn(400);
                 }else{                
-					output="Errore durante l'invio della comunicazione. E' pregato di riprovare.";
+					output="<?php echo $this->lang->line('contatti_script_5'); ?>";
                     //reset values in all input fields
                     $('#contact_form input').val(''); 
                     $('#contact_form textarea').val(''); 

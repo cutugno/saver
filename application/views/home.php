@@ -6,31 +6,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<section class="call_to_action">
           <div class="container">
                <h3>SAVER IMBARCAZIONI</h3>
-               <h4>Produttori di barche dal 1986</h4>
-               <a class="btn btn-primary btn-lg" href="<?php echo site_url('azienda'); ?>">Scopri di più</a>
+               <h4><?php echo $this->lang->line('home_1'); ?></h4>
+               <a class="btn btn-primary btn-lg" href="<?php echo site_url('azienda'); ?>"><?php echo $this->lang->line('home_2'); ?></a>
           </div>     
      </section>
      <section class="features_teasers_wrapper">
           <div class="container">
                <div class="row">
                     <div class="feature_teaser col-sm-4 col-md-4"> <img alt="responsive" src="<?php echo base_url('images/teaser-1.png'); ?>">
-                         <h3>LA NOSTRA ESPERIENZA</h3>
-                         <p>La SAVER, con sede a Piraino (ME) nasce nel 1986 e da <strong>oltre trent’anni progetta</strong> e costruisce imbarcazioni in vtr ed ora anche gommoni. I nostri prodotti sono realizzati in modo artigianale e tutta la nostra gamma rientra nella categoria “natanti”.</p>
+                         <h3><?php echo $this->lang->line('home_3'); ?></h3>
+                         <p><?php echo $this->lang->line('home_4'); ?></p>
                     </div>
                     <div class="feature_teaser col-sm-4 col-md-4"> <img alt="responsive" src="<?php echo base_url('images/teaser-2.png'); ?>">
-                         <h3>I NOSTRI SPAZI</h3>
-                         <p>La nostra struttura produttiva si sviluppa su di <strong>un’area di oltre 6.000 mq.</strong> cui si aggiunge un’altra struttura di 4.000 mq ubicata a Gioiosa Marea, ove si provvede alla stampa delle parti in vetroresina.</p>
+                         <h3><?php echo $this->lang->line('home_5'); ?></h3>
+                         <p><?php echo $this->lang->line('home_6'); ?></p>
                     </div>
                     <div class="feature_teaser col-sm-4 col-md-4"> <img alt="responsive" src="<?php echo base_url('images/teaser-3.png'); ?>">
-                         <h3>IL NOSTRO METODO</h3>
-                         <p>All’interno del Cantiere tutte le imbarcazioni (in vetroresina o gommoni) vengono costruite in modo curato, ognuna da un apposito reparto che ne segue lo sviluppo. Vengono usate <strong>vetroresine di alta qualità</strong> ed accessoristica di primario livello.</p>
+                         <h3><?php echo $this->lang->line('home_7'); ?></h3>
+                         <p><?php echo $this->lang->line('home_8'); ?></p>
                     </div>
                </div>
           </div>
      </section>
      <section class="portfolio_teasers_wrapper">
           <div class="container">
-               <h2 class="section_header fancy centered">Alcuni dei nostri prodotti</h2>
+               <h2 class="section_header fancy centered"><?php echo $this->lang->line('home_9'); ?></h2>
                <div class="portfolio_strict row">
 				   <?php // var_dump ($prodotti); ?>
 				   <?php foreach ($prodotti as $key=>$val) : ?>

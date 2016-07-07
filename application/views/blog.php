@@ -4,11 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
 	<section class="hgroup">
           <div class="container">
-               <h1><?php echo $titolocat; ?></h1>
-               <h2><?php echo $sottotitolocat; ?></h2>
+               <h1><?php echo $categoria->titolo; ?></h1>
+               <h2><?php echo $categoria->sottotitolo; ?></h2>
                <ul class="breadcrumb pull-right">
                     <li><a href="<?php echo base_url(); ?>">Home</a> </li>
-                    <li class="active"><?php echo $titolocat; ?></li>
+                    <li class="active"><?php echo $categoria->titolo; ?></li>
                </ul>
           </div>     
      </section>
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								  <div class="post_header">
 									   <h3 class="post_title"><a href="<?php echo site_url($this->uri->segment(1)."/".$val->slug."/".$val->id); ?>"><?php echo $val->titolo; ?></a></h3>
 									   <?php if ($cat==1) : ?>
-									   <div class="post_sub"><i class="fa fa-clock-o"></i> Pubblicato il <strong><?php echo $val->data_ins; ?></strong></div>
+									   <div class="post_sub"><i class="fa fa-clock-o"></i><?php echo $this->lang->line('blog_1'); ?><strong><?php echo $val->data_ins; ?></strong></div>
 									   <?php endif ?>
 								  </div>
 								  <div class="post_content">
@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									   </figure>
 									   <?php endif ?>
 									   <p><?php echo word_limiter($val->testo,30); ?></p>
-									   <a href="<?php echo site_url($this->uri->segment(1)."/".$val->slug."/".$val->id); ?>" class="btn btn-primary">Leggi tutto</a> 
+									   <a href="<?php echo site_url($this->uri->segment(1)."/".$val->slug."/".$val->id); ?>" class="btn btn-primary"><?php echo $this->lang->line('blog_2'); ?></a> 
 								  </div>
 							 </article>
 							 <?php endforeach ?>
@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								  -->
 							 </div>
 						<?php else : ?>
-						Nessun elemento disponibile
+						<?php echo $this->lang->line('blog_3'); ?>
 						<?php endif ?>
                     </div>
                     <div id="sidebar" class="col-sm-4 col-md-4">

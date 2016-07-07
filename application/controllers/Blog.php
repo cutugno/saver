@@ -15,24 +15,24 @@ class Blog extends MY_Controller {
 		// menu active (v. anche switch sotto)
 		$data['notizieactive']=$data['rassegnaactive']=$data['aziendaactive']=$data['prodottiactive']=$data['reteactive']=$data['contattiactive']="";
 			
-		// specifiche pagina per differenziare notizie e rassegna stampa
+		// info categoria con titolo tradotto
+		$categoria=$this->news_model->getCategoriaNbyId($cat);
+		$lang=substr($this->session->lang,0,2);
+		$titolo=json_decode($categoria->titolo);
+		$categoria->titolo=$titolo->$lang;
 		switch ($cat) {
 			case 1:
-				$data['titolocat']="Notizie";
-				$data['sottotitolocat']="";
+				$categoria->sottotitolo="";
 				$data['notizieactive']=" class='active'";				
 				break;
-			case 2:
-				
-				$data['titolocat']="Rassegna Stampa";
-				$data['sottotitolocat']="";
+			case 2:				
+				$categoria->sottotitolo="";
 				$data['rassegnaactive']=" class='active'";
 				break;
 		}		
+		$data['categoria']=$categoria;
 		$data['cat']=$cat;
-		
-		$lang=substr($this->session->lang,0,2);
-		
+			
 		// elenco news
 		$news=$this->news_model->getNewsbyCat($cat,$start);
 		if (null!=$news) {
