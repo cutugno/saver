@@ -62,7 +62,7 @@
 		callback;
 	}
 	function resetPartImg(dest) {
-		dest.attr("src","");		
+		//dest.attr("src","");		
 	}
 	function fadeInImg(cont) {
 		cont.fadeIn(250);
@@ -80,9 +80,7 @@
 			changePartImg($(this),$("#particolare"),fadeInImg($("#particolare")));			
 		},
 		function() {
-			$("#particolare").fadeOut(200, function() {
-				resetPartImg($("#particolare"));
-			});
+			fadeOutImg($("#particolare"));
 		}
 	);
 	

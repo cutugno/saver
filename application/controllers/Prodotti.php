@@ -8,6 +8,7 @@ class Prodotti extends MY_Controller {
 		if (empty($cat)) redirect(base_url());
 		
 		$lang=substr($this->session->lang,0,2);
+		
 		// ultime news (va in tutti i controller)
 		$data['newsfooter']=$this->custom->getNewsFooter(2);
 		
