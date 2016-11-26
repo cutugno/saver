@@ -8,7 +8,9 @@
 		
 		public function getAffiliati () {
 		
-			$query=$this->db->get('affiliati');
+			$query=$this->db->where('active',1)
+							->get('affiliati');
+							//->get_compiled_select('affiliati'); return $query;
 			return $query->result();
 
 		}
