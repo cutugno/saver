@@ -32,8 +32,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
           <div id="social_media_wrapper"> 
 			  <a href="<?php echo LINKFB; ?>" target="_blank"><i class="fa fa-facebook"></i></a> 
-			  <a href="#"><i class="fa fa-youtube"></i></a> 
-			  <a href="#"><i class="fa fa-envelope"></i></a> </div>
+			  <a href="https://www.youtube.com/channel/UCHaG-ZN3ZMe5sP0s-6QTPiw" target="_blank"><i class="fa fa-youtube"></i></a> 
+			  <a href="mailto:saverimbarcazioni@tiscali.it" target="_blank"><i class="fa fa-envelope"></i></a> </div>
           <div id="sign"><small><?php echo $lang_vers; ?></small>
           </div>
      </div>
