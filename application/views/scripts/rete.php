@@ -33,7 +33,11 @@ function init() {
 	marker.addListener('click', function() {
 		map.setZoom(14);
 		map.setCenter(this.getPosition());
-		var info="<strong><?php echo $val->nome; ?></strong><br><?php echo $val->indirizzo; ?><br><a href='mailto:<?php echo $val->email; ?>'><?php echo $val->email; ?></a><br><?php echo $val->tel; ?><br><strong><?php echo $val->tipologia; ?></strong>";
+		var info_mail="";
+		<?php foreach ($val->email as $email) : ?>
+		info_mail=info_mail+"<a href='mailto:<?php echo trim($email); ?>'><?php echo trim($email); ?></a><br>";
+		<?php endforeach ?>
+		var info="<strong><?php echo $val->nome; ?></strong><br><?php echo $val->indirizzo; ?><br>"+info_mail+"<?php echo $val->tel; ?><br><strong><?php echo $val->tipologia; ?></strong>";
 		vediInfo("#descr",info); 
 	});
 	<?php endforeach ?>

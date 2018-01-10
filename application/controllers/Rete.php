@@ -19,7 +19,10 @@ class Rete extends MY_Controller {
 		$data['mapcontclass']="map-rete";
 		
 		// elenco affiliati
-		$affiliati=$this->affiliati_model->getAffiliati();
+		$affiliati=$this->affiliati_model->getAffiliati();		
+		foreach ($affiliati as &$val) {
+			$val->email=explode("-",$val->email);
+		}
 		$data['affiliati']=$affiliati;
 				
 		$this->load->view('common/head');
