@@ -21,7 +21,7 @@ class Rete extends MY_Controller {
 		// elenco affiliati
 		$affiliati=$this->affiliati_model->getAffiliati();		
 		foreach ($affiliati as &$val) {
-			$val->email=explode("-",$val->email);
+			$val->email=explode(";",$val->email);
 		}
 		$data['affiliati']=$affiliati;
 				
